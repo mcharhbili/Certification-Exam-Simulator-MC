@@ -1,0 +1,2416 @@
+{
+    "data":[
+    {
+        "question": "Why might you choose TrainValidationSplit over CrossValidator for tuning?",
+        "options": "A. It gives better model accuracy | B. It supports more model types | C. It is faster to run on large datasets | D. It requires fewer hyperparameters",
+        "answers": "C",
+        "explanation": "TrainValidationSplit is faster because it only splits once, making it ideal for large datasets where CrossValidator's k-fold logic is computationally expensive."
+    },
+    {
+        "question": "Which function starts a new MLflow run where metrics and parameters can be logged?",
+        "options": "A. mlflow.run() | B. mlflow.start_run() | C. mlflow.track_run() | D. mlflow.log_run()",
+        "answers": "B",
+        "explanation": "mlflow.start_run() is used to start a new experiment run in MLflow."
+    },
+    {
+        "question": "Which metric is threshold-independent for evaluating a binary classifier?",
+        "options": "A. Accuracy | B. F1 Score | C. Precision | D. ROC AUC",
+        "answers": "D",
+        "explanation": "ROC AUC measures the ability of a classifier to rank positive examples higher than negative ones without depending on a specific threshold."
+    },
+    {
+        "question": "What is the main reason for using Databricks Feature Store?",
+        "options": "A. To reduce model size | B. To improve accuracy | C. To ensure consistent features between training and inference | D. To enable GPU support",
+        "answers": "C",
+        "explanation": "Databricks Feature Store provides a single source of truth for feature computation, reducing training-serving skew."
+    },
+    {
+        "question": "What output does Databricks AutoML generate by default?",
+        "options": "A. A trained model only | B. A REST endpoint | C. Notebooks with code for training and exploration | D. A registered feature set",
+        "answers": "C",
+        "explanation": "Databricks AutoML generates notebooks containing data exploration, model training, and evaluation logic."
+    },
+    {
+        "question": "Which stages can a model have in the MLflow Model Registry?",
+        "options": "A. Training | B. Development | C. Staging | D. Production | E. Archived",
+        "answers": "C|D|E",
+        "explanation": "Models in MLflow can be in the 'Staging', 'Production', or 'Archived' stages. 'Training' and 'Development' are not valid registry stages."
+    },
+    {
+        "question": "What does VectorAssembler do in a Spark ML pipeline?",
+        "options": "A. Selects important features | B. Combines multiple feature columns into a single vector column | C. Encodes categorical variables | D. Trains a regression model",
+        "answers": "B",
+        "explanation": "VectorAssembler is used to assemble feature columns into a single vector column, which is required by Spark ML algorithms."
+    },
+    {
+        "question": "Which tools can be used with MLflow to deploy a model on Databricks?",
+        "options": "A. Model Registry | B. Feature Store | C. REST API Endpoint | D. AutoML UI",
+        "answers": "A|C",
+        "explanation": "MLflow Model Registry helps manage and deploy models, and models can be served as REST API endpoints using Databricks model serving."
+    },
+    {
+        "question": "What does the MLflow log_model function do?",
+        "options": "A. Starts an MLflow experiment | B. Logs a trained model to the current run | C. Deploys the model to production | D. Saves a model to disk only",
+        "answers": "B",
+        "explanation": "mlflow.log_model() logs a model artifact to the current MLflow run so it can be registered or deployed."
+    },
+    {
+        "question": "What is the benefit of using CrossValidator over TrainValidationSplit?",
+        "options": "A. Faster training | B. Better handling of skewed datasets | C. More robust performance estimates | D. Simplified code",
+        "answers": "C",
+        "explanation": "CrossValidator uses k-fold cross-validation to provide more robust estimates of model performance compared to a single validation split."
+    },
+    {
+        "question": "Why might you choose TrainValidationSplit over CrossValidator for tuning?",
+        "options": "A. It gives better model accuracy | B. It supports more model types | C. It is faster to run on large datasets | D. It requires fewer hyperparameters",
+        "answers": "C",
+        "explanation": "TrainValidationSplit is faster because it only splits once, making it ideal for large datasets where CrossValidator's k-fold logic is computationally expensive."
+    },
+    {
+        "question": "What does the mlflow.log_param function do?",
+        "options": "A. Logs a model parameter | B. Registers a model | C. Logs an experiment run | D. Sets a tag on the experiment",
+        "answers": "A",
+        "explanation": "mlflow.log_param logs a single parameter associated with the run, useful for experiment tracking."
+    },
+    {
+        "question": "Which function is used to log metrics in MLflow?",
+        "options": "A. mlflow.track_metric | B. mlflow.log_metric | C. mlflow.set_metric | D. mlflow.write_metric",
+        "answers": "B",
+        "explanation": "mlflow.log_metric is used to log numeric metrics to the MLflow tracking server."
+    },
+    {
+        "question": "What is the purpose of MLflow Model Registry?",
+        "options": "A. Train models | B. Store training datasets | C. Manage model lifecycle stages | D. Visualize metrics",
+        "answers": "C",
+        "explanation": "MLflow Model Registry is used to manage different versions of models and their lifecycle stages."
+    },
+    {
+        "question": "Which are valid MLflow model lifecycle stages?",
+        "options": "A. Staging | B. Production | C. Experimental | D. Archived",
+        "answers": "A|B|D",
+        "explanation": "The valid stages are 'Staging', 'Production', and 'Archived'. 'Experimental' is not a valid stage."
+    },
+    {
+        "question": "What does transitioning a model to 'Production' in MLflow imply?",
+        "options": "A. The model is being trained | B. The model is deprecated | C. The model is ready for inference | D. The model failed validation",
+        "answers": "C",
+        "explanation": "Transitioning to 'Production' implies that the model is ready for deployment and inference."
+    },
+    {
+        "question": "How can you deploy a model using MLflow on Databricks?",
+        "options": "A. With mlflow.deploy_model | B. By registering the model and using model serving | C. Through Feature Store | D. By logging as a dataset",
+        "answers": "B",
+        "explanation": "You deploy models in Databricks using Model Registry and enable model serving for the selected version."
+    },
+    {
+        "question": "What is a benefit of using a REST endpoint for model serving?",
+        "options": "A. Enables offline batch inference | B. Reduces the need for model monitoring | C. Allows real-time predictions from external applications | D. Automatically tunes hyperparameters",
+        "answers": "C",
+        "explanation": "REST endpoints provide real-time prediction access from external applications or services."
+    },
+    {
+        "question": "What tool can you use to deploy models to real-time endpoints in Databricks?",
+        "options": "A. Unity Catalog | B. Feature Store | C. Model Serving | D. Delta Live Tables",
+        "answers": "C",
+        "explanation": "Databricks Model Serving allows deployment of models to real-time REST endpoints."
+    },
+    {
+        "question": "How can data drift be detected in production?",
+        "options": "A. Monitor endpoint latency | B. Compare model accuracy | C. Analyze feature distribution changes | D. Track CPU utilization",
+        "answers": "C",
+        "explanation": "Data drift is typically identified by comparing statistical properties of incoming data against training data."
+    },
+    {
+        "question": "What metric would best help monitor model performance decay?",
+        "options": "A. Model size | B. Inference time | C. Model accuracy over time | D. Number of API requests",
+        "answers": "C",
+        "explanation": "Monitoring model accuracy over time helps detect performance decay and identify need for retraining."
+    },
+    {
+        "question": "What’s a good way to monitor data quality for incoming predictions?",
+        "options": "A. Record API usage | B. Track feature null rates | C. Check model latency | D. Monitor REST endpoint hits",
+        "answers": "B",
+        "explanation": "Tracking the null rates of incoming feature values helps identify potential data pipeline issues."
+    },
+    {
+        "question": "Why might you choose TrainValidationSplit over CrossValidator for tuning?",
+        "options": "A. It gives better model accuracy | B. It supports more model types | C. It is faster to run on large datasets | D. It requires fewer hyperparameters",
+        "answers": "C",
+        "explanation": "TrainValidationSplit is faster because it only splits once, making it ideal for large datasets where CrossValidator's k-fold logic is computationally expensive."
+      },
+      {
+        "question": "What is the primary purpose of MLflow Tracking in the experimentation phase?",
+        "options": "A. To automatically tune hyperparameters | B. To log parameters, metrics, and artifacts from experiments | C. To deploy models to production | D. To validate model performance",
+        "answers": "B",
+        "explanation": "MLflow Tracking allows data scientists to log parameters, metrics, and artifacts from their machine learning experiments to compare and evaluate different runs."
+      },
+      {
+        "question": "In Databricks, which component is used to create interactive workspaces for collaborative experimentation?",
+        "options": "A. Delta Lake | B. Notebooks | C. MLflow Projects | D. Feature Store",
+        "answers": "B",
+        "explanation": "Databricks Notebooks provide an interactive environment where data scientists can collaborate, experiment, and document their ML processes."
+      },
+      {
+        "question": "What is the purpose of the 'artifact_path' parameter when logging a model with MLflow?",
+        "options": "A. To specify where the model will be stored in the MLflow tracking server | B. To determine the file format of the saved model | C. To define which cloud storage provider to use | D. To set the model's version number",
+        "answers": "A",
+        "explanation": "The 'artifact_path' parameter determines the directory within the MLflow run's artifact directory where the model will be saved."
+      },
+      {
+        "question": "Which MLflow module enables reproducible machine learning experiments through standardized project structure?",
+        "options": "A. MLflow Tracking | B. MLflow Models | C. MLflow Projects | D. MLflow Registry",
+        "answers": "C",
+        "explanation": "MLflow Projects provides a standard format for packaging reusable data science code, making experiments reproducible across environments."
+      },
+      {
+        "question": "What is the benefit of using AutoML in Databricks?",
+        "options": "A. It always produces production-ready models | B. It automatically deploys models to production | C. It accelerates experimentation by automating algorithm selection and hyperparameter tuning | D. It guarantees optimal model performance",
+        "answers": "C",
+        "explanation": "Databricks AutoML helps accelerate the machine learning process by automatically testing different algorithms and hyperparameters, allowing data scientists to quickly identify promising approaches."
+      },
+      {
+        "question": "Which command would you use to see all experiments in MLflow?",
+        "options": "A. mlflow.list_experiments() | B. mlflow.get_experiments() | C. mlflow.search_experiments() | D. mlflow.find_experiments()",
+        "answers": "C",
+        "explanation": "The mlflow.search_experiments() function is used to list all experiments in MLflow."
+      },
+      {
+        "question": "What should you use to compare different ML models trained with different hyperparameters?",
+        "options": "A. Databricks AutoML | B. MLflow Tracking UI | C. Delta Lake versioning | D. Feature Store lineage",
+        "answers": "B",
+        "explanation": "The MLflow Tracking UI provides a centralized dashboard to compare metrics and parameters across different experiment runs with different models and hyperparameters."
+      },
+      {
+        "question": "Which of the following is true about Hyperopt in Databricks?",
+        "options": "A. It's only compatible with scikit-learn models | B. It supports distributed hyperparameter optimization | C. It can only optimize a single hyperparameter at a time | D. It requires manual parallelization",
+        "answers": "B",
+        "explanation": "Hyperopt in Databricks supports distributed hyperparameter optimization, leveraging the cluster's resources to efficiently search the parameter space in parallel."
+      },
+      {
+        "question": "What is the correct way to log a metric in MLflow?",
+        "options": "A. mlflow.log_parameter('accuracy', 0.95) | B. mlflow.log_metric('accuracy', 0.95) | C. mlflow.record_metric('accuracy', 0.95) | D. mlflow.save_metric('accuracy', 0.95)",
+        "answers": "B",
+        "explanation": "The correct syntax is mlflow.log_metric('metric_name', value), so mlflow.log_metric('accuracy', 0.95) is the proper way to log a metric."
+      },
+      {
+        "question": "What is the purpose of setting a parent run in MLflow?",
+        "options": "A. To organize experiments hierarchically | B. To group related runs for easier comparison | C. To inherit parameters from the parent run | D. To enable parallel execution of child runs",
+        "answers": "B",
+        "explanation": "Setting a parent run in MLflow creates a hierarchical structure that groups related runs together, making it easier to organize and compare experiments."
+      },
+      {
+        "question": "When using MLflow with PyTorch, what method helps ensure model architecture reproducibility?",
+        "options": "A. Saving the model architecture as a YAML file | B. Using autolog() to capture model parameters | C. Logging the model definition code as an artifact | D. Creating a custom PyTorch flavor in MLflow",
+        "answers": "C",
+        "explanation": "Logging the model definition code as an artifact ensures that the PyTorch model architecture can be reproduced exactly in the future."
+      },
+      {
+        "question": "Which Spark ML component allows you to chain multiple algorithms into a single pipeline?",
+        "options": "A. MLlib | B. Pipeline | C. Transformer | D. Estimator",
+        "answers": "B",
+        "explanation": "Spark ML Pipeline allows you to chain multiple ML algorithms and data processing steps into a single workflow for model training and inference."
+      },
+      {
+        "question": "What are the benefits of using Feature Store during experimentation? (Select all that apply)",
+        "options": "A. Ensures consistent feature engineering between training and inference | B. Provides feature sharing across teams | C. Automatically selects the best algorithms | D. Tracks feature lineage",
+        "answers": "A, B, D",
+        "explanation": "Feature Store ensures consistency in feature engineering between training and inference, enables sharing features across teams, and tracks feature lineage for reproducibility. It doesn't automatically select algorithms."
+      },
+      {
+        "question": "What is the purpose of the 'seed' parameter in Spark ML algorithms?",
+        "options": "A. To encrypt model parameters | B. To ensure reproducibility of results | C. To identify the model in MLflow | D. To determine the storage location",
+        "answers": "B",
+        "explanation": "The 'seed' parameter sets a random seed ensuring that the algorithm produces the same results each time it's run with the same data, enabling reproducibility."
+      },
+      {
+        "question": "In MLflow, what is the difference between log_param and log_params?",
+        "options": "A. log_param logs numerical values while log_params logs strings | B. log_param logs a single parameter while log_params logs multiple parameters | C. log_param is for model parameters while log_params is for hyperparameters | D. log_param is deprecated in favor of log_params",
+        "answers": "B",
+        "explanation": "log_param() is used to log a single parameter with a key and value, while log_params() takes a dictionary and logs multiple parameters at once."
+      },
+      {
+        "question": "What is the purpose of the %run magic command in Databricks notebooks for ML experimentation?",
+        "options": "A. To run an external Python script within the notebook | B. To execute the notebook on a scheduled basis | C. To connect to external data sources | D. To run distributed training across the cluster",
+        "answers": "A",
+        "explanation": "The %run magic command in Databricks notebooks allows you to run an external Python script or another notebook within your current notebook, which is useful for modularizing code during experimentation."
+      },
+      {
+        "question": "Which notebook language is NOT supported in Databricks for ML experimentation?",
+        "options": "A. Python | B. R | C. Scala | D. PHP",
+        "answers": "D",
+        "explanation": "Databricks supports Python, R, SQL, and Scala notebooks for machine learning experimentation, but not PHP."
+      },
+      {
+        "question": "What's the best way to compare the learning curves of multiple models in MLflow?",
+        "options": "A. Log each training epoch as a separate run | B. Use log_metric with step parameter for each iteration | C. Create separate experiments for each model | D. Use nested runs for each epoch",
+        "answers": "B",
+        "explanation": "Using log_metric with the step parameter allows you to track metrics across iterations/epochs, enabling the creation of learning curves that can be compared in the MLflow UI."
+      },
+      {
+        "question": "What is the purpose of MLflow autologging in Databricks?",
+        "options": "A. To automatically deploy models to production | B. To automatically log parameters, metrics, and models without explicit logging statements | C. To automatically optimize hyperparameters | D. To automatically distribute training across cluster nodes",
+        "answers": "B",
+        "explanation": "MLflow autologging automatically captures model parameters, metrics, and the model itself without requiring explicit logging statements, simplifying the experimentation process."
+      },
+      {
+        "question": "In Databricks Feature Store, what does it mean to publish a feature table?",
+        "options": "A. Making the features available on the public marketplace | B. Promoting the features from development to production | C. Creating documentation for the features | D. Enabling real-time serving for the features",
+        "answers": "B",
+        "explanation": "Publishing a feature table in Databricks Feature Store means promoting it from development to production, making it available for other data scientists and production applications."
+      },
+      {
+        "question": "What is the correct way to register an MLflow experiment in Databricks?",
+        "options": "A. mlflow.create_experiment('/Users/username/experiment-name') | B. mlflow.set_experiment('/Users/username/experiment-name') | C. mlflow.register_experiment('/Users/username/experiment-name') | D. mlflow.init_experiment('/Users/username/experiment-name')",
+        "answers": "A",
+        "explanation": "The correct way to create and register a new experiment is mlflow.create_experiment(), while mlflow.set_experiment() is used to set the active experiment."
+      },
+      {
+        "question": "Which of the following is NOT a supported model flavor in MLflow?",
+        "options": "A. sklearn | B. tensorflow | C. pytorch | D. tableau",
+        "answers": "D",
+        "explanation": "MLflow supports model flavors for popular ML frameworks like scikit-learn, TensorFlow, PyTorch, and others, but Tableau is a visualization tool, not a supported model flavor."
+      },
+      {
+        "question": "What is the benefit of using widgets in Databricks notebooks for experimentation?",
+        "options": "A. They automatically generate explanations for model predictions | B. They allow interactive parameter selection without changing code | C. They can deploy models with a single click | D. They improve model accuracy",
+        "answers": "B",
+        "explanation": "Databricks notebook widgets allow for interactive parameter selection without changing the underlying code, making it easier to experiment with different options."
+      },
+      {
+        "question": "During hyperparameter tuning, what is an early stopping policy used for?",
+        "options": "A. To limit the total experiment duration | B. To terminate underperforming trials and focus on promising ones | C. To prevent overfitting during model training | D. To save computational resources by reducing the number of evaluations",
+        "answers": "B",
+        "explanation": "Early stopping policies in hyperparameter tuning terminate underperforming trials early to focus computational resources on more promising hyperparameter combinations."
+      },
+      {
+        "question": "Which of the following is TRUE about Databricks Experiments?",
+        "options": "A. They can only be created using the UI, not programmatically | B. They are automatically deleted after 30 days | C. They can contain multiple runs with different parameters and metrics | D. They only support Python models",
+        "answers": "C",
+        "explanation": "Databricks Experiments can contain multiple runs, each with different parameters, metrics, and artifacts, allowing for systematic comparison of various modeling approaches."
+      },
+      {
+        "question": "What's the primary purpose of using MLflow Projects in Databricks?",
+        "options": "A. To manage cluster resources | B. To package ML code for reproducible execution | C. To deploy models to production | D. To store model artifacts",
+        "answers": "B",
+        "explanation": "MLflow Projects provides a standard format for packaging machine learning code so it can be run in a reproducible way across different environments."
+      },
+      {
+        "question": "What is a key advantage of using Delta Lake in Databricks for ML experimentation?",
+        "options": "A. It automatically creates model artifacts | B. It provides versioning for datasets, allowing reproducible experiments | C. It optimizes hyperparameters automatically | D. It logs all experiment metrics",
+        "answers": "B",
+        "explanation": "Delta Lake provides versioning for datasets through features like time travel, enabling reproducible experiments by allowing you to reference specific dataset versions."
+      },
+      {
+        "question": "Which MLflow method allows you to create a Python function that predicts using a saved model?",
+        "options": "A. mlflow.pyfunc.load_model() | B. mlflow.sklearn.load_model() | C. mlflow.get_model() | D. mlflow.predict_model()",
+        "answers": "A",
+        "explanation": "mlflow.pyfunc.load_model() loads a model saved in any supported flavor as a Python function that can be used for predictions, regardless of the original model framework."
+      },
+      {
+        "question": "In Databricks ML, what is the purpose of a 'filter' in an MLflow search API call?",
+        "options": "A. To remove outliers from training data | B. To query for specific runs based on parameters or metrics | C. To eliminate noisy features | D. To format the output of experiment results",
+        "answers": "B",
+        "explanation": "Filters in MLflow search API calls allow you to query for specific runs that match certain criteria based on parameters, metrics, or tags."
+      },
+      {
+        "question": "What is the purpose of MLflow Model Registry?",
+        "options": "A. To store raw data for model training | B. To manage the complete lifecycle of ML models | C. To parallelize model training | D. To optimize model hyperparameters",
+        "answers": "B",
+        "explanation": "The MLflow Model Registry provides a centralized repository for managing the complete lifecycle of ML models, including versioning, stage transitions, and model lineage."
+      },
+      {
+        "question": "Which stage in MLflow Model Registry indicates a model is ready for production use?",
+        "options": "A. Development | B. Staging | C. Production | D. Archived",
+        "answers": "C",
+        "explanation": "The 'Production' stage in MLflow Model Registry indicates that a model has been validated and is approved for use in production environments."
+      },
+      {
+        "question": "What is model lineage in Databricks ML?",
+        "options": "A. The record of all experiments that led to a specific model | B. The ancestry of models showing how they're related | C. The hierarchical organization of model parameters | D. The deployment history of a model",
+        "answers": "B",
+        "explanation": "Model lineage tracks the ancestry and relationships between models, showing how newer versions evolved from previous versions and the changes made."
+      },
+      {
+        "question": "What is the purpose of registering a model in the MLflow Model Registry?",
+        "options": "A. To automatically deploy it to production | B. To make it available for batch inference | C. To centrally manage the model through its lifecycle | D. To enable automatic retraining",
+        "answers": "C",
+        "explanation": "Registering a model in the MLflow Model Registry allows teams to centrally manage and track the model through its lifecycle, including versioning and stage transitions."
+      },
+      {
+        "question": "How can you transition a model from 'Staging' to 'Production' in MLflow Model Registry?",
+        "options": "A. client.promote_model_version() | B. client.transition_model_version_stage() | C. client.update_model_stage() | D. client.set_production_model()",
+        "answers": "B",
+        "explanation": "The correct method is client.transition_model_version_stage(), which allows you to move a model version between Registry stages."
+      },
+      {
+        "question": "What information does MLflow Model Registry automatically track about registered models?",
+        "options": "A. Model performance metrics on production data | B. User access patterns | C. Model versions, descriptions, and stage transitions | D. Downstream applications using the model",
+        "answers": "C",
+        "explanation": "MLflow Model Registry automatically tracks model versions, descriptions, and stage transitions, providing a history of the model's lifecycle."
+      },
+      {
+        "question": "What is the benefit of using model aliases in Databricks Model Registry?",
+        "options": "A. They provide human-readable names for cryptic model IDs | B. They allow referencing models without specifying exact versions | C. They automatically optimize model serving | D. They hide implementation details from end users",
+        "answers": "B",
+        "explanation": "Model aliases in Databricks Model Registry allow you to reference models using named pointers rather than exact version numbers, making it easier to manage model versions for different purposes."
+      },
+      {
+        "question": "Which of the following is TRUE about Model Serving in Databricks?",
+        "options": "A. It only supports models trained with Spark ML | B. It can serve models from the Model Registry | C. It requires manual deployment to separate infrastructure | D. It only supports batch predictions",
+        "answers": "B",
+        "explanation": "Databricks Model Serving can deploy models directly from the Model Registry, supporting both real-time and batch predictions without requiring separate infrastructure."
+      },
+      {
+        "question": "What is the purpose of adding model description and tags in the Model Registry?",
+        "options": "A. To improve model performance | B. To provide searchable metadata and documentation | C. To configure deployment settings | D. To set access permissions",
+        "answers": "B",
+        "explanation": "Adding descriptions and tags to models in the Model Registry provides searchable metadata and documentation, making it easier to find models and understand their purpose and characteristics."
+      },
+      {
+        "question": "What is the difference between archiving and deleting a model in MLflow Model Registry?",
+        "options": "A. Archiving hides the model while deleting permanently removes it | B. Archiving is temporary while deletion is permanent | C. Archiving preserves history while deleting removes traceability | D. There is no difference",
+        "answers": "C",
+        "explanation": "Archiving a model in MLflow Model Registry retains its history and traceability while marking it as inactive, whereas deleting removes the model and its history permanently."
+      },
+      {
+        "question": "Which of the following is a best practice for managing model versions in a team environment?",
+        "options": "A. Everyone should deploy directly to production | B. Use request/approval workflows for stage transitions | C. Create a new model registry for each project | D. Disable versioning to avoid complexity",
+        "answers": "B",
+        "explanation": "Using request/approval workflows for model stage transitions ensures proper governance and review before models move to production, especially in collaborative team environments."
+      },
+      {
+        "question": "How can you export an MLflow model for deployment outside of Databricks?",
+        "options": "A. Use MLflow.registry.download_model() | B. Use MLflow.models.export() | C. Download the model artifacts from the UI or programmatically | D. Models can only be deployed within Databricks",
+        "answers": "C",
+        "explanation": "You can export an MLflow model by downloading its artifacts either from the MLflow UI or programmatically, allowing deployment to environments outside of Databricks."
+      },
+      {
+        "question": "What information would NOT typically be included in model documentation within the Model Registry?",
+        "options": "A. Training dataset details | B. Model performance metrics | C. Model limitations and constraints | D. Raw training data",
+        "answers": "D",
+        "explanation": "Raw training data would not typically be included in model documentation within the Model Registry, as it's often too large and better stored elsewhere with appropriate versioning."
+      },
+      {
+        "question": "What is a model signature in MLflow?",
+        "options": "A. A digital certificate authenticating the model creator | B. A definition of the model's input and output schema | C. A unique identifier for the model | D. The model's performance metrics",
+        "answers": "B",
+        "explanation": "An MLflow model signature defines the model's input and output schema, including data types and shapes, which helps validate data during model serving."
+      },
+      {
+        "question": "What is the purpose of model reviews in the Databricks Model Registry workflow?",
+        "options": "A. To automatically improve model performance | B. To enforce governance through human validation before production deployment | C. To document model architecture | D. To test backward compatibility",
+        "answers": "B",
+        "explanation": "Model reviews in the Databricks Model Registry workflow enforce governance by requiring human validation before models can be moved to production, ensuring quality and compliance."
+      },
+      {
+        "question": "Which of these is NOT a valid stage in MLflow Model Registry's default lifecycle?",
+        "options": "A. None | B. Testing | C. Staging | D. Production",
+        "answers": "B",
+        "explanation": "The default lifecycle stages in MLflow Model Registry are None, Staging, Production, and Archived. 'Testing' is not a default stage (though organizations can use tags for custom stages)."
+      },
+      {
+        "question": "What is the purpose of model versioning in MLflow?",
+        "options": "A. To charge users based on model usage | B. To track changes and allow rollback to previous versions | C. To limit the number of models that can be created | D. To automatically improve model performance over time",
+        "answers": "B",
+        "explanation": "Model versioning in MLflow allows tracking changes to models over time and enables rolling back to previous versions if a new version performs poorly or has issues."
+      },
+      {
+        "question": "How can you automatically trigger model retraining in Databricks?",
+        "options": "A. Using MLflow hooks | B. Using Databricks Jobs with scheduled workflows | C. Using Model Registry webhooks | D. Models automatically retrain when data changes",
+        "answers": "B",
+        "explanation": "Databricks Jobs with scheduled workflows can be used to automate model retraining at regular intervals or in response to specific events like data updates."
+      },
+      {
+        "question": "What is the primary purpose of model validation in the model lifecycle?",
+        "options": "A. To ensure the model works with production data before deployment | B. To compare the model against other models | C. To optimize model hyperparameters | D. To document model architecture",
+        "answers": "A",
+        "explanation": "Model validation ensures the model performs correctly with production-like data before actual deployment, reducing the risk of issues in the production environment."
+      },
+      {
+        "question": "What is the benefit of using MLflow's logged_model URI format (runs:/run-id/run-relative-path)?",
+        "options": "A. It provides permanent access to model artifacts even if storage locations change | B. It compresses model artifacts for faster loading | C. It encrypts model access for security | D. It enables federation across multiple MLflow tracking servers",
+        "answers": "A",
+        "explanation": "The logged_model URI format provides a persistent reference to model artifacts that remains valid even if underlying storage locations change, ensuring reliable access."
+      },
+      {
+        "question": "What does the 'model registry webhook' feature enable in Databricks?",
+        "options": "A. Automatic model optimization | B. Integration with CI/CD pipelines for event-driven workflows | C. Real-time monitoring of model performance | D. Translation between different model formats",
+        "answers": "B",
+        "explanation": "Model registry webhooks enable integration with CI/CD pipelines and other systems by triggering event-driven workflows when specific model registry events occur."
+      },
+      {
+        "question": "Which method would you use to programmatically create a model version in MLflow Model Registry?",
+        "options": "A. mlflow.register_model() | B. mlflow.create_model_version() | C. mlflow.create_registered_model() | D. mlflow.model_registry.add_version()",
+        "answers": "A",
+        "explanation": "mlflow.register_model() is used to create a new version of a model in the MLflow Model Registry from a run artifact."
+      },
+      {
+        "question": "What is a model signature used for in MLflow?",
+        "options": "A. To authenticate the model creator | B. To digitally sign the model for security | C. To verify the model hasn't been tampered with | D. To define the expected schema of model inputs and outputs",
+        "answers": "D",
+        "explanation": "A model signature in MLflow defines the expected schema (column names, types, and shapes) for model inputs and outputs, enabling validation during serving."
+      },
+      {
+        "question": "Which of the following is NOT a typical step in the model governance process?",
+        "options": "A. Documenting model decision boundaries | B. Creating approval workflows for production deployment | C. Automatically optimizing model performance | D. Tracking model lineage and provenance",
+        "answers": "C",
+        "explanation": "Automatic performance optimization is not typically part of model governance, which instead focuses on documentation, approval workflows, and tracking lineage for compliance and risk management."
+      },
+      {
+        "question": "What is the purpose of creating a new registered model in MLflow rather than just adding versions to an existing one?",
+        "options": "A. It improves model performance | B. It provides logical separation between different model types or purposes | C. It's required when changing frameworks (PyTorch to TensorFlow) | D. It reduces storage requirements",
+        "answers": "B",
+        "explanation": "Creating new registered models provides logical separation between different model types or purposes, making management clearer than having all versions under a single model."
+      },
+      {
+        "question": "What approach helps ensure model reproducibility in Databricks?",
+        "options": "A. Always using the latest data | B. Versioning code, environment, and data | C. Using only cloud resources | D. Maximizing model complexity",
+        "answers": "B",
+        "explanation": "Ensuring model reproducibility requires versioning all components that affect the model, including code (versioned repositories), environment (MLflow Projects), and data (Delta Lake versioning)."
+      },
+      {
+        "question": "What is a typical workflow for transitioning models in MLflow Model Registry?",
+        "options": "A. Development → Production → Staging → Archived | B. None → Staging → Production → Archived | C. Staging → None → Production → Archived | D. Production → Staging → None → Archived",
+        "answers": "B",
+        "explanation": "The typical model transition workflow is from None (initial state) to Staging (validation), then to Production (active use), and finally to Archived (when retired)."
+      },
+      {
+        "question": "What is the purpose of the model's input_example in MLflow?",
+        "options": "A. To provide sample data for model inference during serving | B. To document expected input formats | C. To test model performance | D. To generate synthetic training data",
+        "answers": "B",
+        "explanation": "The input_example in MLflow provides a sample of valid model inputs, which helps document the expected format and can be used for model signature inference."
+      },
+      {
+        "question": "How can teams enforce approval workflows for model promotion in Databricks?",
+        "options": "A. By setting user permissions on model registry actions | B. By implementing manual checks outside the platform | C. Models automatically require approval | D. By limiting the number of models that can be registered",
+        "answers": "A",
+        "explanation": "Teams can enforce approval workflows by setting permissions on model registry actions, ensuring only authorized users can transition models to production stages."
+      },
+      {
+        "question": "What is the purpose of the Model Serving feature in Databricks?",
+        "options": "A. To train models faster | B. To deploy models as REST endpoints for real-time inference | C. To manage model versions | D. To track model performance",
+        "answers": "B",
+        "explanation": "Databricks Model Serving allows you to deploy trained models as REST endpoints for real-time inference without managing infrastructure."
+      },
+      {
+        "question": "Which deployment pattern implements separate pipelines for model training and inference?",
+        "options": "A. Two-phase deployment | B. Blue-green deployment | C. Canary deployment | D. Shadow deployment",
+        "answers": "A",
+        "explanation": "Two-phase deployment pattern separates the model training pipeline from the inference pipeline, allowing each to be optimized and scaled independently."
+      },
+      {
+        "question": "What is a blue-green deployment strategy in the context of ML models?",
+        "options": "A. Deploying models with different color-coded UI elements | B. Running two identical production environments with different model versions | C. Deploying two models in sequence | D. Using different cloud providers for redundancy",
+        "answers": "B",
+        "explanation": "Blue-green deployment runs two identical production environments with different model versions, allowing instant rollback by switching traffic between them."
+      },
+      {
+        "question": "In Databricks, what is the primary difference between real-time serving and batch inference?",
+        "options": "A. Real-time uses REST API endpoints while batch processes data in bulk | B. Real-time requires GPU acceleration | C. Batch inference is more accurate | D. Real-time can only use simpler models",
+        "answers": "A",
+        "explanation": "The primary difference is that real-time serving exposes models via REST API endpoints for immediate predictions, while batch inference processes data in bulk for offline scenarios."
+      },
+      {
+        "question": "What is the purpose of model signature when deploying MLflow models?",
+        "options": "A. To authenticate API requests | B. To validate input and output data schemas | C. To compress model artifacts | D. To encrypt sensitive model information",
+        "answers": "B",
+        "explanation": "Model signatures define the expected schema of inputs and outputs, allowing validation of data formats during deployment to catch errors early."
+      },
+      {
+        "question": "What is canary deployment in the context of ML model deployment?",
+        "options": "A. Testing models with synthetic data | B. Gradually routing increasing traffic to a new model version | C. Deploying models only during weekends | D. Using a third-party service to monitor deployment",
+        "answers": "B",
+        "explanation": "Canary deployment involves gradually routing increasing percentages of traffic to a new model version while monitoring performance before full deployment."
+      },
+      {
+        "question": "What is the purpose of MLflow Models module in deployment?",
+        "options": "A. To train models faster | B. To package models in a format that can be deployed in various environments | C. To optimize model hyperparameters | D. To monitor model performance",
+        "answers": "B",
+        "explanation": "MLflow Models packages ML models in a standard format that can be deployed to various environments, providing flexibility in deployment options."
+      },
+      {
+        "question": "Which of the following is NOT a valid MLflow deployment target?",
+        "options": "A. Databricks Model Serving | B. AWS SageMaker | C. Docker containers | D. Microsoft Excel",
+        "answers": "D",
+        "explanation": "MLflow supports deployment to Databricks Model Serving, AWS SageMaker, and Docker containers, but not directly to Microsoft Excel."
+      },
+      {
+        "question": "What is shadow deployment in ML model lifecycle?",
+        "options": "A. Deploying models in a hidden environment | B. Running a new model version alongside the existing one without affecting user traffic | C. Deploying models only during off-hours | D. Deploying models without documentation",
+        "answers": "B",
+        "explanation": "Shadow deployment runs a new model version alongside the existing one, processing the same inputs but not returning results to users, allowing performance comparison without risk."
+      },
+      {
+        "question": "What does transitioning a model to 'Production' in MLflow imply? (Var 7)",
+        "options": "A. The model is being trained | B. The model is deprecated | C. The model is ready for inference | D. The model failed validation",
+        "answers": "C",
+        "explanation": "Transitioning to 'Production' implies that the model is ready for deployment and inference."
+      },
+      {
+        "question": "Why might you choose TrainValidationSplit over CrossValidator for tuning? (Var 17)",
+        "options": "A. It gives better model accuracy | B. It supports more model types | C. It is faster to run on large datasets | D. It requires fewer hyperparameters",
+        "answers": "C",
+        "explanation": "TrainValidationSplit is faster because it only splits once, making it ideal for large datasets where CrossValidator's k-fold logic is computationally expensive."
+      },
+      {
+        "question": "Which are valid MLflow model lifecycle stages? (Var 24)",
+        "options": "A. Staging | B. Production | C. Experimental | D. Archived",
+        "answers": "A|B|D",
+        "explanation": "The valid stages are 'Staging', 'Production', and 'Archived'. 'Experimental' is not a valid stage."
+      },
+      {
+        "question": "How can data drift be detected in production? (Var 10)",
+        "options": "A. Monitor endpoint latency | B. Compare model accuracy | C. Analyze feature distribution changes | D. Track CPU utilization",
+        "answers": "C",
+        "explanation": "Data drift is typically identified by comparing statistical properties of incoming data against training data."
+      },
+      {
+        "question": "Which function is used to log metrics in MLflow? (Var 21)",
+        "options": "A. mlflow.track_metric | B. mlflow.log_metric | C. mlflow.set_metric | D. mlflow.write_metric",
+        "answers": "B",
+        "explanation": "mlflow.log_metric is used to log numeric metrics to the MLflow tracking server."
+      },
+      {
+        "question": "Why might you choose TrainValidationSplit over CrossValidator for tuning?",
+        "options": "A. It gives better model accuracy | B. It supports more model types | C. It is faster to run on large datasets | D. It requires fewer hyperparameters",
+        "answers": "C",
+        "explanation": "TrainValidationSplit is faster because it only splits once, making it ideal for large datasets where CrossValidator's k-fold logic is computationally expensive."
+    },
+    {
+        "question": "Which function sets the current experiment in MLflow before logging runs?",
+        "options": "A. mlflow.set_tag | B. mlflow.start_run | C. mlflow.set_experiment | D. mlflow.log_experiment",
+        "answers": "C",
+        "explanation": "mlflow.set_experiment sets the active experiment context so future runs are logged under that experiment."
+    },
+    {
+        "question": "What does the mlflow.log_param function do?",
+        "options": "A. Logs a model parameter | B. Registers a model | C. Logs an experiment run | D. Sets a tag on the experiment",
+        "answers": "A",
+        "explanation": "mlflow.log_param logs a single parameter associated with the run, useful for experiment tracking."
+    },
+    {
+        "question": "What is the purpose of MLflow Model Registry?",
+        "options": "A. Train models | B. Store training datasets | C. Manage model lifecycle stages | D. Visualize metrics",
+        "answers": "C",
+        "explanation": "MLflow Model Registry is used to manage different versions of models and their lifecycle stages."
+    },
+    {
+        "question": "Which are valid MLflow model lifecycle stages?",
+        "options": "A. Staging | B. Production | C. Experimental | D. Archived",
+        "answers": "A|B|D",
+        "explanation": "The valid stages are 'Staging', 'Production', and 'Archived'. 'Experimental' is not a valid stage."
+    },
+    {
+        "question": "Which MLflow function is used to log a trained model artifact?",
+        "options": "A. mlflow.track_model | B. mlflow.log_model | C. mlflow.register_model | D. mlflow.save_model",
+        "answers": "B",
+        "explanation": "mlflow.log_model is used to log the trained model artifact to the MLflow tracking server."
+    },
+    {
+        "question": "How can you deploy a model using MLflow on Databricks?",
+        "options": "A. With mlflow.deploy_model | B. By registering the model and using model serving | C. Through Feature Store | D. By logging as a dataset",
+        "answers": "B",
+        "explanation": "You deploy models in Databricks using Model Registry and enable model serving for the selected version."
+    },
+    {
+        "question": "What is a benefit of using a REST endpoint for model serving?",
+        "options": "A. Enables offline batch inference | B. Reduces the need for model monitoring | C. Allows real-time predictions from external applications | D. Automatically tunes hyperparameters",
+        "answers": "C",
+        "explanation": "REST endpoints provide real-time prediction access from external applications or services."
+    },
+    {
+        "question": "What component enables real-time serving of a registered model in Databricks?",
+        "options": "A. Feature Store | B. MLflow UI | C. Model Serving | D. AutoML",
+        "answers": "C",
+        "explanation": "Model Serving in Databricks allows real-time inference using registered models via REST API."
+    },
+    {
+        "question": "How can data drift be detected in production?",
+        "options": "A. Monitor endpoint latency | B. Compare model accuracy | C. Analyze feature distribution changes | D. Track CPU utilization",
+        "answers": "C",
+        "explanation": "Data drift is typically identified by comparing statistical properties of incoming data against training data."
+    },
+    {
+        "question": "What metric would best help monitor model performance decay?",
+        "options": "A. Model size | B. Inference time | C. Model accuracy over time | D. Number of API requests",
+        "answers": "C",
+        "explanation": "Monitoring model accuracy over time helps detect performance decay and identify need for retraining."
+    },
+    {
+        "question": "Which tool is most suitable for visualizing data drift in Databricks?",
+        "options": "A. DBFS | B. SQL Analytics | C. Databricks Notebooks with visualizations | D. MLflow UI",
+        "answers": "C",
+        "explanation": "You can visualize data drift effectively using charts and plots in Databricks Notebooks."
+    },
+    {
+        "question": "Why might you choose TrainValidationSplit over CrossValidator for tuning?",
+        "options": "A. It gives better model accuracy | B. It supports more model types | C. It is faster to run on large datasets | D. It requires fewer hyperparameters",
+        "answers": "C",
+        "explanation": "TrainValidationSplit is faster because it only splits once, making it ideal for large datasets where CrossValidator's k-fold logic is computationally expensive."
+    },
+    {
+        "question": "Which Databricks feature allows you to track and compare multiple ML experiments?",
+        "options": "A. MLflow Tracking | B. Delta Lake | C. Feature Store | D. AutoML",
+        "answers": "A",
+        "explanation": "MLflow Tracking is designed for logging, tracking, and comparing machine learning experiments."
+    },
+    {
+        "question": "What is the primary benefit of model versioning in MLflow?",
+        "options": "A. Faster training | B. Reproducibility and rollback | C. More accurate models | D. Real-time inference",
+        "answers": "B",
+        "explanation": "Model versioning allows you to reproduce results and roll back to previous versions if needed."
+    },
+    {
+        "question": "Which MLflow component manages the lifecycle of machine learning models?",
+        "options": "A. MLflow Projects | B. MLflow Tracking | C. MLflow Registry | D. MLflow Models",
+        "answers": "C",
+        "explanation": "MLflow Registry is the component responsible for managing model versions, stages, and lifecycle."
+    },
+    {
+        "question": "What is the purpose of registering a model in MLflow?",
+        "options": "A. To speed up training | B. To enable deployment and governance | C. To clean the data | D. To tune hyperparameters",
+        "answers": "B",
+        "explanation": "Registering a model allows for deployment, governance, and lifecycle management."
+    },
+    {
+        "question": "Which MLflow model stage is intended for models that are ready for production?",
+        "options": "A. None | B. Staging | C. Production | D. Archived",
+        "answers": "C",
+        "explanation": "The 'Production' stage is for models that are deployed and actively serving predictions."
+    },
+    {
+        "question": "What is the main advantage of using MLflow Projects?",
+        "options": "A. Model monitoring | B. Packaging reproducible code | C. Data visualization | D. Feature engineering",
+        "answers": "B",
+        "explanation": "MLflow Projects allow you to package code for reproducible runs and sharing."
+    },
+    {
+        "question": "When using Databricks AutoML, what is automatically generated for you?",
+        "options": "A. Only the final model | B. Data cleaning scripts | C. Experiment notebooks and best model | D. Production endpoints",
+        "answers": "C",
+        "explanation": "AutoML generates experiment notebooks and the best model based on your data."
+    },
+    {
+        "question": "Which of the following is NOT a valid MLflow model stage?",
+        "options": "A. None | B. Testing | C. Staging | D. Archived",
+        "answers": "B",
+        "explanation": "MLflow model stages are None, Staging, Production, and Archived."
+    },
+    {
+        "question": "What is a primary use case for Delta Lake in ML workflows?",
+        "options": "A. Model deployment | B. Data versioning and ACID transactions | C. Hyperparameter tuning | D. Model explainability",
+        "answers": "B",
+        "explanation": "Delta Lake provides ACID transactions and data versioning, which are critical for reliable ML workflows."
+    },
+    {
+        "question": "Which Databricks feature allows you to monitor model predictions for data drift?",
+        "options": "A. MLflow Tracking | B. Model Registry | C. Model Serving Monitoring | D. Feature Store",
+        "answers": "C",
+        "explanation": "Model Serving Monitoring enables tracking of prediction data and alerts for drift."
+    },
+    {
+        "question": "What is the benefit of using Feature Store in Databricks?",
+        "options": "A. Real-time inference | B. Centralized, reusable features | C. Model deployment | D. Data visualization",
+        "answers": "B",
+        "explanation": "Feature Store centralizes features, making them reusable and consistent across models."
+    },
+    {
+        "question": "Which of the following is NOT tracked by MLflow by default?",
+        "options": "A. Parameters | B. Metrics | C. Data lineage | D. Artifacts",
+        "answers": "C",
+        "explanation": "MLflow tracks parameters, metrics, and artifacts, but not data lineage by default."
+    },
+    {
+        "question": "What is the recommended way to deploy a model for real-time inference in Databricks?",
+        "options": "A. Batch scoring | B. Model Serving endpoint | C. MLflow Projects | D. Delta Live Tables",
+        "answers": "B",
+        "explanation": "Model Serving endpoints provide REST APIs for real-time inference."
+    },
+    {
+        "question": "Which MLflow API call is used to log a trained model?",
+        "options": "A. mlflow.log_param | B. mlflow.log_metric | C. mlflow.log_model | D. mlflow.register_model",
+        "answers": "C",
+        "explanation": "mlflow.log_model() is used to log a trained model as an artifact."
+    },
+    {
+        "question": "What does model drift refer to in production ML systems?",
+        "options": "A. Model accuracy increases | B. Model performance degrades over time | C. Model size increases | D. Model training time increases",
+        "answers": "B",
+        "explanation": "Model drift is when model performance degrades due to changes in data or environment."
+    },
+    {
+        "question": "Which technique helps detect data drift in deployed models?",
+        "options": "A. Cross-validation | B. Monitoring input feature distributions | C. Hyperparameter tuning | D. Model ensembling",
+        "answers": "B",
+        "explanation": "Monitoring input feature distributions helps detect data drift."
+    },
+    {
+        "question": "What is a benefit of using MLflow autologging?",
+        "options": "A. Manual logging of metrics | B. Automatic capture of parameters and metrics | C. Faster model training | D. Improved model accuracy",
+        "answers": "B",
+        "explanation": "Autologging automatically captures parameters, metrics, and artifacts during training."
+    },
+    {
+        "question": "Which MLflow component allows you to store and retrieve models for deployment?",
+        "options": "A. Tracking | B. Projects | C. Registry | D. Artifacts",
+        "answers": "C",
+        "explanation": "MLflow Registry is used for storing and retrieving models for deployment."
+    },
+    {
+        "question": "What is the main function of the 'Staging' stage in MLflow Model Registry?",
+        "options": "A. Models are in production | B. Models are being tested before production | C. Models are archived | D. Models are deleted",
+        "answers": "B",
+        "explanation": "The 'Staging' stage is for testing models before promoting them to production."
+    },
+    {
+        "question": "Which of the following is a best practice for experiment tracking?",
+        "options": "A. Track only final model | B. Track all runs and parameters | C. Track only metrics | D. Avoid tracking artifacts",
+        "answers": "B",
+        "explanation": "Tracking all runs and parameters allows for reproducibility and better model selection."
+    },
+    {
+        "question": "What is a key advantage of using distributed hyperparameter tuning in Databricks?",
+        "options": "A. Lower cost | B. Faster search over parameter space | C. Simpler code | D. Less resource usage",
+        "answers": "B",
+        "explanation": "Distributed tuning allows faster exploration of hyperparameter combinations."
+    },
+    {
+        "question": "Which MLflow function is used to start a new experiment run?",
+        "options": "A. mlflow.start_run() | B. mlflow.log_param() | C. mlflow.create_experiment() | D. mlflow.set_tag()",
+        "answers": "A",
+        "explanation": "mlflow.start_run() is used to begin a new experiment run."
+    },
+    {
+        "question": "What does the 'Archived' stage in MLflow Model Registry signify?",
+        "options": "A. Model is in production | B. Model is deprecated and not in use | C. Model is being tested | D. Model is deleted",
+        "answers": "B",
+        "explanation": "Archived models are deprecated and not actively used."
+    },
+    {
+        "question": "Which deployment option is best for batch inference in Databricks?",
+        "options": "A. Model Serving endpoint | B. Streaming endpoint | C. Scheduled notebook or job | D. AutoML",
+        "answers": "C",
+        "explanation": "Scheduled notebooks or jobs are suitable for batch inference tasks."
+    },
+    {
+        "question": "What is the purpose of MLflow artifacts?",
+        "options": "A. Store raw data | B. Store trained models and files | C. Store hyperparameters | D. Store metrics",
+        "answers": "B",
+        "explanation": "Artifacts are used to store models, files, and outputs from runs."
+    },
+    {
+        "question": "Which of the following is a valid use case for MLflow Projects?",
+        "options": "A. Logging metrics | B. Packaging code for reproducibility | C. Model deployment | D. Data cleaning",
+        "answers": "B",
+        "explanation": "MLflow Projects package code for reproducible runs."
+    },
+    {
+        "question": "What is the main benefit of using Databricks Model Serving?",
+        "options": "A. Data cleaning | B. Real-time model inference | C. Data visualization | D. Model tracking",
+        "answers": "B",
+        "explanation": "Model Serving enables real-time inference through REST APIs."
+    },
+    {
+        "question": "Which MLflow function is used to log a metric?",
+        "options": "A. mlflow.log_param() | B. mlflow.log_metric() | C. mlflow.log_artifact() | D. mlflow.start_run()",
+        "answers": "B",
+        "explanation": "mlflow.log_metric() logs a metric value for a run."
+    },
+    {
+        "question": "What is the recommended way to handle sensitive data in ML experiments?",
+        "options": "A. Store in plain text | B. Use encrypted storage and access controls | C. Share with all users | D. Store in notebooks",
+        "answers": "B",
+        "explanation": "Sensitive data should be encrypted and access-controlled."
+    },
+    {
+        "question": "Which of the following is NOT a benefit of experiment tracking?",
+        "options": "A. Reproducibility | B. Model explainability | C. Comparison of runs | D. Collaboration",
+        "answers": "B",
+        "explanation": "Experiment tracking does not directly provide model explainability."
+    },
+    {
+        "question": "What does the 'None' stage in MLflow Model Registry indicate?",
+        "options": "A. Model is in production | B. Model has not been assigned a stage | C. Model is archived | D. Model is deleted",
+        "answers": "B",
+        "explanation": "'None' means the model has not been assigned a lifecycle stage yet."
+    },
+    {
+        "question": "What is the main purpose of model lineage tracking?",
+        "options": "A. Track data changes | B. Trace model creation and dependencies | C. Improve model accuracy | D. Reduce training time",
+        "answers": "B",
+        "explanation": "Model lineage tracking allows you to trace how a model was created, including dependencies."
+    },
+    {
+        "question": "Which of the following can cause data drift?",
+        "options": "A. Changing data distributions | B. Improved model accuracy | C. Increased training time | D. Model versioning",
+        "answers": "A",
+        "explanation": "Data drift is caused by changes in the underlying data distribution."
+    },
+    {
+        "question": "What is a recommended approach to mitigate model drift?",
+        "options": "A. Ignore it | B. Retrain models periodically | C. Use the same model forever | D. Disable monitoring",
+        "answers": "B",
+        "explanation": "Retraining models periodically helps mitigate drift."
+    },
+    {
+        "question": "Which MLflow feature allows for automated model promotion based on performance?",
+        "options": "A. Model Registry webhooks | B. Tracking UI | C. Projects | D. Delta Lake",
+        "answers": "A",
+        "explanation": "Webhooks can automate actions like model promotion based on performance."
+    },
+    {
+        "question": "What is the primary purpose of a model signature in MLflow?",
+        "options": "A. Store model weights | B. Define model input/output schema | C. Track metrics | D. Version data",
+        "answers": "B",
+        "explanation": "A model signature defines the expected input and output schema for a model."
+    },
+    {
+        "question": "Which of the following is a requirement for reproducible ML experiments?",
+        "options": "A. Random seeds | B. Tracking environment and dependencies | C. Logging metrics | D. All of the above",
+        "answers": "D",
+        "explanation": "All listed items are important for reproducibility."
+    },
+    {
+        "question": "What does MLflow's 'log_artifact' function do?",
+        "options": "A. Logs a model | B. Logs a file or directory as an artifact | C. Logs a metric | D. Logs a parameter",
+        "answers": "B",
+        "explanation": "log_artifact logs files or directories as artifacts to a run."
+    },
+    {
+        "question": "Which Databricks feature allows for collaborative model development and review?",
+        "options": "A. Model Registry | B. AutoML | C. Delta Lake | D. Feature Store",
+        "answers": "A",
+        "explanation": "Model Registry supports collaboration and review of model versions."
+    },
+    {
+        "question": "What is the primary benefit of using MLflow Tracking UI?",
+        "options": "A. Model deployment | B. Visual comparison of experiment runs | C. Data cleaning | D. Feature engineering",
+        "answers": "B",
+        "explanation": "The Tracking UI allows for visual comparison of experiment runs."
+    },
+    {
+        "question": "What is the main advantage of using Databricks Jobs for ML model deployment?",
+        "options": "A. Real-time inference | B. Scheduled or triggered batch inference | C. Model explainability | D. Data visualization",
+        "answers": "B",
+        "explanation": "Databricks Jobs are ideal for scheduled or triggered batch inference."
+    },
+    {
+        "question": "Which MLflow component is used for packaging code and dependencies?",
+        "options": "A. Tracking | B. Projects | C. Registry | D. Artifacts",
+        "answers": "B",
+        "explanation": "MLflow Projects is for packaging code and dependencies."
+    },
+    {
+        "question": "Which of the following is a key benefit of model monitoring?",
+        "options": "A. Improved data cleaning | B. Early detection of performance issues | C. Faster training | D. More features",
+        "answers": "B",
+        "explanation": "Model monitoring allows early detection of performance issues such as drift."
+    },
+    {
+        "question": "What is the main function of the Databricks Feature Store?",
+        "options": "A. Store raw data | B. Store, share, and reuse engineered features | C. Store models | D. Store metrics",
+        "answers": "B",
+        "explanation": "Feature Store enables storage and reuse of engineered features."
+    },
+    {
+        "question": "Which of the following is NOT a best practice for model deployment?",
+        "options": "A. Monitor deployed models | B. Use version control | C. Ignore data changes | D. Automate deployment",
+        "answers": "C",
+        "explanation": "Ignoring data changes is not a best practice for deployment."
+    },
+    {
+        "question": "What does the 'Production' stage in MLflow Model Registry represent?",
+        "options": "A. Model is being tested | B. Model is actively serving predictions | C. Model is deprecated | D. Model is deleted",
+        "answers": "B",
+        "explanation": "'Production' means the model is actively serving predictions."
+    },
+    {
+        "question": "Which of the following is a key feature of Databricks AutoML?",
+        "options": "A. Only supports regression | B. Automated experiment tracking | C. No model explainability | D. Only manual feature engineering",
+        "answers": "B",
+        "explanation": "Databricks AutoML automatically tracks experiments and results."
+    },
+    {
+        "question": "What is the main advantage of using MLflow for experiment tracking?",
+        "options": "A. Only works with Databricks | B. Open-source and language-agnostic | C. Requires manual logging | D. Only tracks metrics",
+        "answers": "B",
+        "explanation": "MLflow is open-source and supports multiple languages and platforms."
+    },
+    {
+        "question": "What does the MLflow 'register_model' function do?",
+        "options": "A. Deploys a model | B. Registers a model in the Model Registry | C. Logs a metric | D. Logs a parameter",
+        "answers": "B",
+        "explanation": "register_model registers a model artifact in the Model Registry."
+    },
+    {
+        "question": "Which of the following is a valid reason to archive a model in MLflow?",
+        "options": "A. Model is underperforming | B. Model is in production | C. Model is being tested | D. Model is new",
+        "answers": "A",
+        "explanation": "Underperforming or deprecated models should be archived."
+    },
+    {
+        "question": "Which Databricks feature helps with reproducible ML experiments?",
+        "options": "A. Model Serving | B. MLflow Projects | C. AutoML | D. Delta Live Tables",
+        "answers": "B",
+        "explanation": "MLflow Projects help package code for reproducible experiments."
+    },
+    {
+        "question": "What is the main purpose of a model endpoint in Databricks?",
+        "options": "A. Data cleaning | B. Serve models for real-time inference | C. Model tracking | D. Feature engineering",
+        "answers": "B",
+        "explanation": "Model endpoints serve models for real-time predictions."
+    },
+    {
+        "question": "Which of the following is NOT a component of MLflow?",
+        "options": "A. Tracking | B. Registry | C. Feature Store | D. Projects",
+        "answers": "C",
+        "explanation": "Feature Store is a Databricks feature, not part of MLflow."
+    },
+    {
+        "question": "Which of the following is a benefit of using Databricks Model Registry?",
+        "options": "A. Model explainability | B. Centralized model management | C. Data visualization | D. Feature engineering",
+        "answers": "B",
+        "explanation": "Model Registry centralizes model management and governance."
+    },
+    {
+        "question": "What is the purpose of a webhook in MLflow Model Registry?",
+        "options": "A. Data cleaning | B. Automate actions on model events | C. Model explainability | D. Feature engineering",
+        "answers": "B",
+        "explanation": "Webhooks automate actions such as deployment or notifications on model events."
+    },
+    {
+        "question": "Which of the following is a key step in the ML model lifecycle?",
+        "options": "A. Data cleaning only | B. Model training only | C. Experimentation, deployment, monitoring | D. Feature engineering only",
+        "answers": "C",
+        "explanation": "The lifecycle includes experimentation, deployment, and monitoring."
+    },
+    {
+        "question": "What is a key benefit of model versioning?",
+        "options": "A. Faster inference | B. Ability to roll back and audit | C. Improved data cleaning | D. Real-time monitoring",
+        "answers": "B",
+        "explanation": "Model versioning enables rollback and auditing of changes."
+    },
+    {
+        "question": "Which of the following is a recommended practice for ML model deployment?",
+        "options": "A. Ignore monitoring | B. Use versioned models | C. Deploy untested models | D. Avoid automation",
+        "answers": "B",
+        "explanation": "Using versioned models ensures traceability and rollback."
+    },
+    {
+        "question": "What is the main purpose of monitoring solution in ML production?",
+        "options": "A. Data cleaning | B. Detecting model/data drift and performance issues | C. Model explainability | D. Feature engineering",
+        "answers": "B",
+        "explanation": "Monitoring helps detect drift and performance degradation."
+    },
+    {
+        "question": "Which of the following is NOT a typical model deployment strategy?",
+        "options": "A. Blue-green deployment | B. Shadow deployment | C. Random deployment | D. Canary deployment",
+        "answers": "C",
+        "explanation": "Random deployment is not a recognized deployment strategy."
+    },
+    {
+        "question": "Which MLflow component allows for logging and comparing experiment runs?",
+        "options": "A. Registry | B. Tracking | C. Projects | D. Feature Store",
+        "answers": "B",
+        "explanation": "MLflow Tracking is for logging and comparing runs."
+    },
+    {
+        "question": "What is the main advantage of using Databricks for ML workflows?",
+        "options": "A. Manual tracking | B. Unified platform for data, experiments, and deployment | C. No model registry | D. Only supports batch inference",
+        "answers": "B",
+        "explanation": "Databricks provides a unified platform for the entire ML workflow."
+    },
+    {
+        "question": "Which of the following is a valid way to promote a model in MLflow Registry?",
+        "options": "A. Change stage to 'Production' | B. Delete model | C. Archive model | D. Remove version",
+        "answers": "A",
+        "explanation": "Promoting a model involves changing its stage to 'Production'."
+    },
+    {
+        "question": "What is a key benefit of using Databricks AutoML for model development?",
+        "options": "A. Requires manual tracking | B. Automates model selection and tuning | C. Only supports one algorithm | D. No experiment tracking",
+        "answers": "B",
+        "explanation": "AutoML automates model selection and hyperparameter tuning."
+    },
+    {
+        "question": "Which of the following is a recommended practice for solution monitoring?",
+        "options": "A. Monitor only during training | B. Monitor in production | C. Ignore monitoring | D. Monitor only metrics",
+        "answers": "B",
+        "explanation": "Monitoring in production is critical for detecting issues early."
+    },
+    {
+        "question": "Which Databricks feature is used for sharing and reusing features across teams?",
+        "options": "A. Model Registry | B. Feature Store | C. MLflow Tracking | D. AutoML",
+        "answers": "B",
+        "explanation": "Feature Store enables sharing and reuse of features across teams."
+    },
+    {
+        "question": "What is the main purpose of MLflow Projects?",
+        "options": "A. Model tracking | B. Packaging code for reproducibility | C. Model deployment | D. Feature engineering",
+        "answers": "B",
+        "explanation": "MLflow Projects package code and dependencies for reproducible runs."
+    },
+    {
+        "question": "Which of the following is NOT a benefit of using MLflow?",
+        "options": "A. Experiment tracking | B. Model registry | C. Data cleaning | D. Model packaging",
+        "answers": "C",
+        "explanation": "MLflow does not provide data cleaning functionality."
+    },
+    {
+        "question": "What is a key advantage of using Databricks Model Serving?",
+        "options": "A. Real-time prediction APIs | B. Only batch inference | C. Data cleaning | D. Feature engineering",
+        "answers": "A",
+        "explanation": "Model Serving provides real-time prediction APIs."
+    },
+    {
+        "question": "Which MLflow function is used to log hyperparameters?",
+        "options": "A. mlflow.log_param() | B. mlflow.log_metric() | C. mlflow.log_artifact() | D. mlflow.start_run()",
+        "answers": "A",
+        "explanation": "mlflow.log_param() logs hyperparameters for a run."
+    },
+    {
+        "question": "Which of the following is a benefit of using Delta Lake for ML data?",
+        "options": "A. ACID transactions and versioning | B. Only supports batch data | C. No schema enforcement | D. No data lineage",
+        "answers": "A",
+        "explanation": "Delta Lake provides ACID transactions, versioning, and schema enforcement."
+    },
+    {
+        "question": "What is the main purpose of model monitoring in production?",
+        "options": "A. Data cleaning | B. Detect data/model drift and performance issues | C. Model explainability | D. Feature engineering",
+        "answers": "B",
+        "explanation": "Monitoring detects drift and performance issues in production."
+    },
+    {
+        "question": "Which of the following is NOT a stage in MLflow Model Registry?",
+        "options": "A. None | B. Production | C. Testing | D. Archived",
+        "answers": "C",
+        "explanation": "Testing is not a recognized stage; valid stages are None, Staging, Production, Archived."
+    },
+    {
+        "question": "What is a key benefit of using MLflow autologging?",
+        "options": "A. Manual logging required | B. Automatically logs parameters and metrics | C. No artifact logging | D. Only logs models",
+        "answers": "B",
+        "explanation": "Autologging automatically logs parameters, metrics, and artifacts."
+    },
+    {
+        "question": "Which of the following is a recommended practice for model lifecycle management?",
+        "options": "A. Ignore model versioning | B. Use Model Registry for version control | C. Deploy untested models | D. Avoid tracking",
+        "answers": "B",
+        "explanation": "Model Registry should be used for version control and lifecycle management."
+    },
+    {
+        "question": "Which Databricks feature supports real-time model inference via REST API?",
+        "options": "A. Model Registry | B. Model Serving | C. Feature Store | D. Delta Lake",
+        "answers": "B",
+        "explanation": "Model Serving provides real-time inference via REST API."
+    },
+    {
+        "question": "What is the main purpose of archiving a model in MLflow?",
+        "options": "A. Promote to production | B. Deprecate and remove from active use | C. Retrain model | D. Delete model",
+        "answers": "B",
+        "explanation": "Archiving deprecates the model and removes it from active use."
+    },
+    {
+        "question": "Which MLflow function is used to log a model artifact?",
+        "options": "A. mlflow.log_param() | B. mlflow.log_metric() | C. mlflow.log_model() | D. mlflow.start_run()",
+        "answers": "C",
+        "explanation": "mlflow.log_model() logs a model artifact to a run."
+    },
+    {
+        "question": "Which of the following is a benefit of using MLflow Model Registry?",
+        "options": "A. Centralized model management | B. Data cleaning | C. Feature engineering | D. Model explainability",
+        "answers": "A",
+        "explanation": "Model Registry centralizes model management and governance."
+    },
+    {
+        "question": "What is a key advantage of using Databricks Feature Store?",
+        "options": "A. Only supports batch inference | B. Centralized feature management | C. Model deployment | D. Data cleaning",
+        "answers": "B",
+        "explanation": "Feature Store centralizes and manages features for reuse."
+    },
+    {
+        "question": "Which of the following is NOT a benefit of using MLflow?",
+        "options": "A. Experiment tracking | B. Model registry | C. Data cleaning | D. Model packaging",
+        "answers": "C",
+        "explanation": "MLflow does not provide data cleaning functionality."
+    },
+    {
+        "question": "Which MLflow component is used for logging and comparing experiment runs?",
+        "options": "A. Registry | B. Tracking | C. Projects | D. Feature Store",
+        "answers": "B",
+        "explanation": "MLflow Tracking is for logging and comparing runs."
+    },
+    {
+        "question": "What is the main advantage of using Databricks for ML workflows?",
+        "options": "A. Manual tracking | B. Unified platform for data, experiments, and deployment | C. No model registry | D. Only supports batch inference",
+        "answers": "B",
+        "explanation": "Databricks provides a unified platform for the entire ML workflow."
+    },
+    {
+        "question": "Which of the following is a valid way to promote a model in MLflow Registry?",
+        "options": "A. Change stage to 'Production' | B. Delete model | C. Archive model | D. Remove version",
+        "answers": "A",
+        "explanation": "Promoting a model involves changing its stage to 'Production'."
+    },
+    {
+        "question": "What is a key benefit of using Databricks AutoML for model development?",
+        "options": "A. Requires manual tracking | B. Automates model selection and tuning | C. Only supports one algorithm | D. No experiment tracking",
+        "answers": "B",
+        "explanation": "AutoML automates model selection and hyperparameter tuning."
+    },
+    {
+        "question": "Which of the following is a recommended practice for solution monitoring?",
+        "options": "A. Monitor only during training | B. Monitor in production | C. Ignore monitoring | D. Monitor only metrics",
+        "answers": "B",
+        "explanation": "Monitoring in production is critical for detecting issues early."
+    },
+    {
+        "question": "Which Databricks feature is used for sharing and reusing features across teams?",
+        "options": "A. Model Registry | B. Feature Store | C. MLflow Tracking | D. AutoML",
+        "answers": "B",
+        "explanation": "Feature Store enables sharing and reuse of features across teams."
+    },
+    {
+        "question": "What is the main purpose of MLflow Projects?",
+        "options": "A. Model tracking | B. Packaging code for reproducibility | C. Model deployment | D. Feature engineering",
+        "answers": "B",
+        "explanation": "MLflow Projects package code and dependencies for reproducible runs."
+    },
+    {
+        "question": "Which of the following is NOT a benefit of using MLflow?",
+        "options": "A. Experiment tracking | B. Model registry | C. Data cleaning | D. Model packaging",
+        "answers": "C",
+        "explanation": "MLflow does not provide data cleaning functionality."
+    },
+    {
+        "question": "What is a key advantage of using Databricks Model Serving?",
+        "options": "A. Real-time prediction APIs | B. Only batch inference | C. Data cleaning | D. Feature engineering",
+        "answers": "A",
+        "explanation": "Model Serving provides real-time prediction APIs."
+    },
+    {
+        "question": "Which MLflow function is used to log hyperparameters?",
+        "options": "A. mlflow.log_param() | B. mlflow.log_metric() | C. mlflow.log_artifact() | D. mlflow.start_run()",
+        "answers": "A",
+        "explanation": "mlflow.log_param() logs hyperparameters for a run."
+    },
+    {
+        "question": "Which of the following is a benefit of using Delta Lake for ML data?",
+        "options": "A. ACID transactions and versioning | B. Only supports batch data | C. No schema enforcement | D. No data lineage",
+        "answers": "A",
+        "explanation": "Delta Lake provides ACID transactions, versioning, and schema enforcement."
+    },
+    {
+        "question": "What is the main purpose of model monitoring in production?",
+        "options": "A. Data cleaning | B. Detect data/model drift and performance issues | C. Model explainability | D. Feature engineering",
+        "answers": "B",
+        "explanation": "Monitoring detects drift and performance issues in production."
+    },
+    {
+        "question": "Which of the following is NOT a stage in MLflow Model Registry?",
+        "options": "A. None | B. Production | C. Testing | D. Archived",
+        "answers": "C",
+        "explanation": "Testing is not a recognized stage; valid stages are None, Staging, Production, Archived."
+    },
+    {
+        "question": "What is a key benefit of using MLflow autologging?",
+        "options": "A. Manual logging required | B. Automatically logs parameters and metrics | C. No artifact logging | D. Only logs models",
+        "answers": "B",
+        "explanation": "Autologging automatically logs parameters, metrics, and artifacts."
+    },
+    {
+        "question": "Which of the following is a recommended practice for model lifecycle management?",
+        "options": "A. Ignore model versioning | B. Use Model Registry for version control | C. Deploy untested models | D. Avoid tracking",
+        "answers": "B",
+        "explanation": "Model Registry should be used for version control and lifecycle management."
+    },
+    {
+        "question": "Which Databricks feature supports real-time model inference via REST API?",
+        "options": "A. Model Registry | B. Model Serving | C. Feature Store | D. Delta Lake",
+        "answers": "B",
+        "explanation": "Model Serving provides real-time inference via REST API."
+    },
+    {
+        "question": "What is the main purpose of archiving a model in MLflow?",
+        "options": "A. Promote to production | B. Deprecate and remove from active use | C. Retrain model | D. Delete model",
+        "answers": "B",
+        "explanation": "Archiving deprecates the model and removes it from active use."
+    },
+    {
+        "question": "Which MLflow function is used to log a model artifact?",
+        "options": "A. mlflow.log_param() | B. mlflow.log_metric() | C. mlflow.log_model() | D. mlflow.start_run()",
+        "answers": "C",
+        "explanation": "mlflow.log_model() logs a model artifact to a run."
+    },
+    {
+        "question": "Which of the following is a benefit of using MLflow Model Registry?",
+        "options": "A. Centralized model management | B. Data cleaning | C. Feature engineering | D. Model explainability",
+        "answers": "A",
+        "explanation": "Model Registry centralizes model management and governance."
+    },
+    {
+        "question": "What is a key advantage of using Databricks Feature Store?",
+        "options": "A. Only supports batch inference | B. Centralized feature management | C. Model deployment | D. Data cleaning",
+        "answers": "B",
+        "explanation": "Feature Store centralizes and manages features for reuse."
+    },
+    {
+        "question": "Which of the following is NOT a benefit of using MLflow?",
+        "options": "A. Experiment tracking | B. Model registry | C. Data cleaning | D. Model packaging",
+        "answers": "C",
+        "explanation": "MLflow does not provide data cleaning functionality."
+    },
+      {
+        "question": "Why might you choose TrainValidationSplit over CrossValidator for tuning?",
+        "options": "A. It gives better model accuracy | B. It supports more model types | C. It is faster to run on large datasets | D. It requires fewer hyperparameters",
+        "answers": "C",
+        "explanation": "TrainValidationSplit is faster because it only splits once, making it ideal for large datasets where CrossValidator's k-fold logic is computationally expensive."
+      },
+      {
+        "question": "What is MLflow primarily used for in Databricks?",
+        "options": "A. Data preprocessing only | B. Tracking experiments, packaging code, and model management | C. Running SQL queries on ML data | D. Generating visualizations for reports",
+        "answers": "B",
+        "explanation": "MLflow is an open-source platform for the complete machine learning lifecycle that includes tracking experiments, packaging code into reproducible runs, and sharing and deploying models."
+      },
+      {
+        "question": "Which MLflow component allows you to package ML code in a reusable, reproducible form?",
+        "options": "A. MLflow Tracking | B. MLflow Projects | C. MLflow Models | D. MLflow Registry",
+        "answers": "B",
+        "explanation": "MLflow Projects is a standard format for packaging reusable data science code that provides reproducibility and portability."
+      },
+      {
+        "question": "What is feature store in the context of Databricks?",
+        "options": "A. A physical storage location for feature data | B. A centralized repository for storing, sharing, and managing features | C. A component only used for real-time inference | D. A code library for feature transformations",
+        "answers": "B",
+        "explanation": "Databricks Feature Store is a centralized repository for managing and sharing features. It enables discovery, documentation, and reuse of features across an organization."
+      },
+      {
+        "question": "What is the primary purpose of MLflow Model Registry?",
+        "options": "A. To train machine learning models | B. To version and manage the full lifecycle of models | C. To store training datasets | D. To process data for training",
+        "answers": "B",
+        "explanation": "MLflow Model Registry provides a centralized model store, set of APIs, and UI, to collaboratively manage the full lifecycle of an MLflow Model including model versioning, stage transitions, and annotations."
+      },
+      {
+        "question": "Which Spark MLlib parameter tuning technique evaluates multiple parameter combinations using multiple models?",
+        "options": "A. Pipeline | B. CrossValidator | C. FeatureSelector | D. RegressionEvaluator",
+        "answers": "B",
+        "explanation": "CrossValidator in Spark MLlib performs k-fold cross-validation, which trains and evaluates multiple models using different combinations of parameters."
+      },
+      {
+        "question": "What is a benefit of using Delta Lake for machine learning data pipelines?",
+        "options": "A. It only works with unstructured data | B. It provides ACID transactions and schema enforcement | C. It eliminates the need for feature engineering | D. It automatically selects the best machine learning algorithm",
+        "answers": "B",
+        "explanation": "Delta Lake provides ACID transactions, scalable metadata handling, schema enforcement, and time travel capabilities, making it excellent for reliable ML data pipelines."
+      },
+      {
+        "question": "What is the default storage format for Databricks tables?",
+        "options": "A. CSV | B. Parquet | C. Delta | D. JSON",
+        "answers": "C",
+        "explanation": "Delta Lake is the default storage format for Databricks tables, offering benefits like ACID transactions, schema enforcement, and time travel capabilities."
+      },
+      {
+        "question": "How can you handle concept drift in a deployed machine learning model?",
+        "options": "A. Increase the model complexity | B. Regularly monitor model performance and retrain when necessary | C. Use only batch processing | D. Decrease the learning rate",
+        "answers": "B",
+        "explanation": "Concept drift occurs when the statistical properties of the target variable change over time. Monitoring model performance and retraining the model when drift is detected is the best approach to handle this."
+      },
+      {
+        "question": "What is the purpose of hyperparameter tuning?",
+        "options": "A. To clean input data | B. To find optimal parameters that cannot be learned from the data | C. To select training data | D. To visualize model results",
+        "answers": "B",
+        "explanation": "Hyperparameter tuning is the process of finding the optimal hyperparameters (parameters that cannot be learned directly from the regular training process) for a learning algorithm."
+      },
+      {
+        "question": "Which MLflow component is used for deploying models as REST APIs?",
+        "options": "A. MLflow Tracking | B. MLflow Projects | C. MLflow Models | D. MLflow Registry",
+        "answers": "C",
+        "explanation": "MLflow Models provides a standard format for packaging machine learning models that can be used in a variety of downstream tools, such as real-time serving through REST APIs."
+      },
+      {
+        "question": "What is the main advantage of using a feature store in machine learning projects?",
+        "options": "A. It makes feature engineering unnecessary | B. It provides consistency between training and serving | C. It speeds up model training by 10x | D. It automatically selects the best features",
+        "answers": "B",
+        "explanation": "A feature store ensures consistency between training and serving by providing the same feature transformations and values to both environments, reducing training-serving skew."
+      },
+      {
+        "question": "Which statement about model versioning in MLflow Registry is true?",
+        "options": "A. You can only have one active version of a model at a time | B. Model versions can be assigned stages like 'Staging' and 'Production' | C. Versioning is only available for Python models | D. Versioning requires manual intervention for each training run",
+        "answers": "B",
+        "explanation": "In MLflow Model Registry, model versions can be assigned to different stages like 'Staging', 'Production', or 'Archived' to track where they are in the ML lifecycle."
+      },
+      {
+        "question": "What is the purpose of the 'staging' stage in MLflow Model Registry?",
+        "options": "A. It's where models are automatically deployed to production | B. It's used for testing and validation before production | C. It's where old models are stored after use | D. It's where raw data is processed before training",
+        "answers": "B",
+        "explanation": "The 'staging' stage in MLflow Model Registry is used to designate models that are being tested and validated before potential promotion to production."
+      },
+      {
+        "question": "What is AutoML in Databricks?",
+        "options": "A. A tool that automatically trains models using various algorithms and parameters | B. A way to schedule automatic model retraining | C. A technique to automatically clean data | D. A method to automatically deploy models",
+        "answers": "A",
+        "explanation": "Databricks AutoML automatically builds and tunes models using various algorithms and hyperparameters to help data scientists find promising models quickly for their specific tasks."
+      },
+      {
+        "question": "Which is NOT a key component of the Databricks Machine Learning platform?",
+        "options": "A. Feature Store | B. MLflow | C. TensorBoard | D. Delta Lake",
+        "answers": "C",
+        "explanation": "While TensorBoard is a useful tool for visualizing TensorFlow models, it is not a core component of the Databricks Machine Learning platform like Feature Store, MLflow, and Delta Lake."
+      },
+      {
+        "question": "What is the primary benefit of using Delta Lake tables for machine learning data?",
+        "options": "A. They can only store structured data | B. They provide ACID transactions and time travel capabilities | C. They automatically select the best ML algorithm | D. They require less storage space than other formats",
+        "answers": "B",
+        "explanation": "Delta Lake provides ACID transaction guarantees and time travel capabilities, making it ideal for reliable and reproducible machine learning pipelines."
+      },
+      {
+        "question": "What is data drift in the context of machine learning models?",
+        "options": "A. When the model architecture changes over time | B. When the statistical properties of the input data change over time | C. When data storage becomes more expensive | D. When data processing becomes slower",
+        "answers": "B",
+        "explanation": "Data drift occurs when the statistical properties of the input data change over time, potentially causing the model's performance to degrade as the relationship between inputs and target variable changes."
+      },
+      {
+        "question": "What is the purpose of model signatures in MLflow?",
+        "options": "A. To digitally sign the model for security | B. To specify the model's input and output schema | C. To attribute the model to its creator | D. To specify the hardware requirements for the model",
+        "answers": "B",
+        "explanation": "Model signatures in MLflow specify the model's input and output schema, helping ensure that data passed to the model at serving time matches the expected format."
+      },
+      {
+        "question": "Which technique can help detect covariate shift in production models?",
+        "options": "A. Model precision testing | B. Statistical tests comparing training and production data distributions | C. Code reviews | D. Unit testing",
+        "answers": "B",
+        "explanation": "Statistical tests comparing the distributions of features in training data versus production data can help detect covariate shift, which occurs when the distribution of input variables changes."
+      },
+      {
+        "question": "What are online feature stores optimized for?",
+        "options": "A. High-throughput batch processing | B. Low-latency lookups for real-time inference | C. Storage efficiency | D. Advanced analytics",
+        "answers": "B",
+        "explanation": "Online feature stores are optimized for low-latency lookups to support real-time model inference in production environments."
+      },
+      {
+        "question": "In Databricks, what is the primary way to log model metrics during training?",
+        "options": "A. Using Delta Lake tables | B. Using MLflow tracking | C. Using Spark SQL | D. Using Databricks notebooks only",
+        "answers": "B",
+        "explanation": "MLflow tracking is the primary way to log metrics, parameters, artifacts, and models during the training process in Databricks."
+      },
+      {
+        "question": "What is model monitoring in MLOps?",
+        "options": "A. Manually checking model outputs | B. Continuously tracking model performance and data in production | C. One-time validation before deployment | D. Daily backups of model files",
+        "answers": "B",
+        "explanation": "Model monitoring in MLOps involves continuously tracking the performance of deployed models and the characteristics of the data they process to detect issues like drift or performance degradation."
+      },
+      {
+        "question": "Which method is recommended for deploying models for batch inference in Databricks?",
+        "options": "A. Databricks Jobs | B. Databricks Connect only | C. Manual execution of notebooks | D. REST API only",
+        "answers": "A",
+        "explanation": "Databricks Jobs is the recommended way to schedule and run batch inference workloads, providing reliable, scheduled execution with monitoring and alerting."
+      },
+      {
+        "question": "What is a benefit of using Feature Store for feature sharing in Databricks?",
+        "options": "A. It enforces that each team creates unique features | B. It eliminates the need for data scientists | C. It enables feature discovery and reuse across teams | D. It only works with structured data",
+        "answers": "C",
+        "explanation": "Databricks Feature Store enables feature discovery and reuse across teams, promoting collaboration and reducing duplicate work in feature engineering."
+      },
+      {
+        "question": "Which MLflow API allows you to log parameters, metrics, and artifacts?",
+        "options": "A. MLflow Models API | B. MLflow Tracking API | C. MLflow Projects API | D. MLflow Registry API",
+        "answers": "B",
+        "explanation": "The MLflow Tracking API allows you to log parameters, metrics, and artifacts for your runs, and later query this data."
+      },
+      {
+        "question": "What does the Model Registry stage 'Archived' typically indicate?",
+        "options": "A. The model is currently being used in production | B. The model is being tested before production | C. The model is newly registered | D. The model is no longer actively used",
+        "answers": "D",
+        "explanation": "The 'Archived' stage typically indicates that a model version is no longer being used or considered for use, but is kept for record-keeping purposes."
+      },
+      {
+        "question": "What is the purpose of model serving in Databricks?",
+        "options": "A. Training models on large datasets | B. Making trained models available for inference via REST API | C. Storing model artifacts | D. Creating visualizations of model results",
+        "answers": "B",
+        "explanation": "Model serving in Databricks allows you to deploy trained models as REST endpoints for real-time inference."
+      },
+      {
+        "question": "Which feature of Delta Lake helps with reproducibility in ML workflows?",
+        "options": "A. Columnar format | B. Time travel (ability to access previous versions) | C. Compression | D. Support for unstructured data",
+        "answers": "B",
+        "explanation": "Delta Lake's time travel feature allows you to access previous versions of data, which is essential for reproducing ML experiments and results."
+      },
+      {
+        "question": "What is a lineage graph in the context of MLflow?",
+        "options": "A. A visualization of model performance over time | B. A diagram showing the relationships between data, code, and models | C. A plot of feature importance | D. A representation of neural network architecture",
+        "answers": "B",
+        "explanation": "A lineage graph in MLflow shows the relationships between data, code, parameters, and resulting models, providing transparency and reproducibility in the ML workflow."
+      },
+      {
+        "question": "Which method is NOT typically used for model deployment in Databricks?",
+        "options": "A. Model Serving | B. Batch inference using jobs | C. Real-time inference using streaming | D. Manual file transfers",
+        "answers": "D",
+        "explanation": "Manual file transfers are not a typical or recommended method for model deployment in Databricks, as they lack automation, versioning, and monitoring capabilities."
+      },
+      {
+        "question": "What is the recommended approach for handling data drift in production ML systems?",
+        "options": "A. Ignore it as models are designed to handle all data variations | B. Monitor input data and model outputs, triggering retraining when necessary | C. Always deploy new models weekly regardless of drift | D. Only use batch processing to avoid drift issues",
+        "answers": "B",
+        "explanation": "The recommended approach is to continuously monitor both input data distributions and model outputs for signs of drift, and trigger model retraining when significant drift is detected."
+      },
+      {
+        "question": "What is the primary purpose of experiment tracking in MLflow?",
+        "options": "A. To create new machine learning algorithms | B. To record parameters, metrics, and artifacts for reproducibility | C. To share code between teams | D. To schedule model training jobs",
+        "answers": "B",
+        "explanation": "Experiment tracking in MLflow records parameters, metrics, code versions, and artifacts to ensure reproducibility and provide visibility into the model development process."
+      },
+      {
+        "question": "What is typically logged as an 'artifact' in MLflow?",
+        "options": "A. Only source code files | B. Files such as models, plots, or datasets | C. Only hyperparameters | D. Only metrics",
+        "answers": "B",
+        "explanation": "Artifacts in MLflow are typically files associated with a run, such as trained models, visualizations/plots, processed datasets, or other outputs from the training process."
+      },
+      {
+        "question": "Which option represents the correct flow for model deployment in a mature MLOps process?",
+        "options": "A. Code → Build → Test → Deploy | B. Develop → Build → Test → Release → Deploy → Monitor | C. Train → Deploy → Monitor | D. Code → Deploy → Test → Monitor",
+        "answers": "B",
+        "explanation": "A mature MLOps process typically follows: Develop (code/experimentation), Build (creating packages/containers), Test (validation), Release (versioning), Deploy (to production), and Monitor (tracking performance)."
+      },
+      {
+        "question": "What is a benefit of using MLflow Projects for machine learning development?",
+        "options": "A. It automatically selects the best algorithm | B. It provides a standardized way to package ML code for reproducibility | C. It eliminates the need for data preprocessing | D. It makes hyperparameter tuning unnecessary",
+        "answers": "B",
+        "explanation": "MLflow Projects provides a standardized format for packaging ML code that includes specifications for dependencies, entry points, and parameters, making experiments reproducible across environments."
+      },
+      {
+        "question": "Which is NOT a typical stage in the MLflow Model Registry?",
+        "options": "A. None | B. Staging | C. Development | D. Production",
+        "answers": "C",
+        "explanation": "The typical stages in MLflow Model Registry are None (newly registered), Staging (testing/validation), Production (actively used), and Archived (no longer active) - 'Development' is not a standard stage."
+      },
+      {
+        "question": "What is the primary purpose of a feature store?",
+        "options": "A. To store raw data | B. To manage, share, and reuse features across teams and projects | C. To automatically generate new features | D. To replace data engineers",
+        "answers": "B",
+        "explanation": "A feature store primarily serves to manage, share, and reuse features across different teams and projects, ensuring consistency between training and serving environments."
+      },
+      {
+        "question": "What is the difference between online and offline feature stores?",
+        "options": "A. Online stores use cloud storage, offline stores use local storage | B. Online stores are optimized for low-latency lookups, offline stores for batch processing | C. Online stores are for structured data, offline stores for unstructured data | D. Online stores are managed by IT, offline stores by data scientists",
+        "answers": "B",
+        "explanation": "Online feature stores are optimized for low-latency lookups to support real-time inference, while offline feature stores are optimized for high-throughput batch processing during model training."
+      },
+      {
+        "question": "Which Databricks capability allows for executing ML pipelines on a schedule?",
+        "options": "A. Databricks SQL | B. Databricks Repos | C. Databricks Jobs | D. Databricks Notebooks",
+        "answers": "C",
+        "explanation": "Databricks Jobs allows you to schedule and run ML pipelines (notebooks, jars, or Python scripts) on a recurring basis with monitoring and alerting capabilities."
+      },
+      {
+        "question": "What is the recommended way to handle sensitive data in MLflow experiments?",
+        "options": "A. Always include sensitive data for complete tracking | B. Use MLflow tags to mark sensitive data | C. Avoid logging sensitive data as parameters or artifacts | D. Encrypt all MLflow data",
+        "answers": "C",
+        "explanation": "The recommended practice is to avoid logging sensitive data (like PII, credentials, etc.) as parameters or artifacts in MLflow to prevent potential exposure through the tracking server."
+      },
+      {
+        "question": "Which is NOT a common method for deploying models in Databricks?",
+        "options": "A. Model Serving for real-time inference | B. Databricks Jobs for batch inference | C. Structured Streaming for streaming inference | D. Downloading models for manual deployment",
+        "answers": "D",
+        "explanation": "While downloading models for manual deployment is possible, it's not a common or recommended method as it bypasses the automated MLOps capabilities provided by Databricks."
+      },
+      {
+        "question": "What is the purpose of model signatures in MLflow?",
+        "options": "A. To encrypt model files | B. To specify input and output schemas for the model | C. To authenticate the model creator | D. To verify model performance",
+        "answers": "B",
+        "explanation": "Model signatures in MLflow specify the expected input and output schemas (column names, types, shapes) for a model, helping to validate data at inference time."
+      },
+      {
+        "question": "What is a key benefit of using Databricks Feature Store for feature engineering?",
+        "options": "A. It eliminates the need for data cleaning | B. It ensures feature consistency between training and serving | C. It automatically generates all required features | D. It reduces the need for domain expertise",
+        "answers": "B",
+        "explanation": "A key benefit of Databricks Feature Store is ensuring feature consistency between training and serving, reducing training-serving skew by using the same feature computation logic."
+      },
+      {
+        "question": "Which statement about MLflow Models is correct?",
+        "options": "A. They can only be used with Python models | B. They can be deployed to multiple target environments using flavors | C. They can only be used within Databricks | D. They must be stored in a cloud object store",
+        "answers": "B",
+        "explanation": "MLflow Models supports multiple 'flavors' that allow the same model to be deployed to different environments (like batch scoring, real-time servers, or edge devices)."
+      },
+      {
+        "question": "What is the main purpose of canary deployments for ML models?",
+        "options": "A. To reduce infrastructure costs | B. To test new models with a small portion of traffic before full rollout | C. To encrypt model data | D. To automatically select the best performing model",
+        "answers": "B",
+        "explanation": "Canary deployments gradually roll out new models by directing a small portion of traffic to them first, allowing you to monitor performance and detect issues before full deployment."
+      },
+      {
+        "question": "Which statement about model drift is correct?",
+        "options": "A. Model drift only occurs in deep learning models | B. Model drift can be prevented entirely with proper feature engineering | C. Model drift can occur due to changes in data distributions or relationships | D. Model drift only happens when code changes",
+        "answers": "C",
+        "explanation": "Model drift can occur due to changes in input data distributions (data drift) or changes in the relationship between features and target (concept drift), affecting model performance over time."
+      },
+      {
+        "question": "What is the primary purpose of the mlflow.start_run() function in MLflow?",
+        "options": "A. To start training a model | B. To create an active run for logging parameters, metrics, and artifacts | C. To launch a new Spark job | D. To deploy a model to production",
+        "answers": "B",
+        "explanation": "The mlflow.start_run() function creates an active MLflow run within which you can log parameters, metrics, and artifacts associated with a particular execution of your code."
+      },
+      {
+        "question": "What is a benefit of using Delta Lake for ML feature data?",
+        "options": "A. It automatically generates features | B. It provides ACID transactions and time travel capabilities | C. It eliminates the need for feature engineering | D. It automatically deploys models",
+        "answers": "B",
+        "explanation": "Delta Lake provides ACID transactions and time travel capabilities, making it reliable for storing ML feature data with the ability to reproduce training datasets from specific points in time."
+      },
+      {
+        "question": "Which approach is NOT recommended for model deployment in Databricks?",
+        "options": "A. Using MLflow Model Serving for real-time inference | B. Using Databricks Jobs for batch inference | C. Manually copying model files between environments | D. Using MLflow Model Registry with CI/CD pipelines",
+        "answers": "C",
+        "explanation": "Manually copying model files between environments is error-prone and lacks governance, reproducibility, and automation compared to the other approaches."
+      },
+      {
+        "question": "What is a characteristic of a good experiment tracking system?",
+        "options": "A. It forces all team members to use the same ML algorithms | B. It records inputs, code, parameters, and results to enable reproducibility | C. It only works with specific programming languages | D. It eliminates the need for model validation",
+        "answers": "B",
+        "explanation": "A good experiment tracking system records inputs, code versions, parameters, and results to enable reproducibility and comparison of experiments."
+      },
+      {
+        "question": "What is the recommended way to handle feature engineering for both batch training and real-time serving in Databricks?",
+        "options": "A. Create separate logic for each environment | B. Use Feature Store to ensure consistency | C. Only use pre-computed features | D. Avoid real-time serving altogether",
+        "answers": "B",
+        "explanation": "Using Databricks Feature Store ensures that the same feature engineering logic is applied consistently in both batch training and real-time serving environments."
+      },
+      {
+        "question": "Which statement about concept drift is correct?",
+        "options": "A. It only affects classification models | B. It occurs when the relationship between input features and target variable changes | C. It is impossible to detect automatically | D. It can be completely prevented with proper feature engineering",
+        "answers": "B",
+        "explanation": "Concept drift occurs when the relationship between input features and the target variable changes over time, affecting model performance regardless of stable input distributions."
+      },
+      {
+        "question": "What is the primary purpose of A/B testing for deployed ML models?",
+        "options": "A. To determine if a model runs faster on A or B hardware | B. To compare the performance of two different models in production | C. To test if a model works with database A or B | D. To validate model code",
+        "answers": "B",
+        "explanation": "A/B testing for ML models involves comparing the performance of two different models (or a new vs. existing model) in production with real users/data to determine which performs better."
+      },
+      {
+        "question": "Which is NOT a typical metric logged during ML model training?",
+        "options": "A. Accuracy | B. Loss | C. Server CPU utilization | D. AUC-ROC",
+        "answers": "C",
+        "explanation": "While accuracy, loss, and AUC-ROC are common ML performance metrics logged during training, server CPU utilization is an infrastructure metric rather than a model performance metric."
+      },
+      {
+        "question": "What is MLflow Tracking used for?",
+        "options": "A. Tracking physical assets | B. Logging parameters, metrics, and artifacts during ML experiments | C. Tracking employee work hours | D. GPS location tracking",
+        "answers": "B",
+        "explanation": "MLflow Tracking is used for logging parameters, code versions, metrics, and output files when running machine learning code to later visualize and compare results."
+      },
+      {
+        "question": "What is the benefit of using model registries like MLflow Model Registry?",
+        "options": "A. They eliminate the need for model training | B. They centralize model storage and manage the model lifecycle | C. They automatically fix bugs in model code | D. They make model deployment unnecessary",
+        "answers": "B",
+        "explanation": "Model registries like MLflow Model Registry centralize model storage and help manage the full lifecycle of models including versioning, stage transitions, and annotations."
+      },
+      {
+        "question": "Which is NOT a typical stage in an MLOps deployment pipeline?",
+        "options": "A. Model validation | B. Automated testing | C. Manual file copying | D. Monitoring setup",
+        "answers": "C",
+        "explanation": "Manual file copying is not a typical stage in a mature MLOps deployment pipeline, which should be automated, reproducible, and version-controlled."
+      },
+      {
+        "question": "What is the purpose of the mlflow.log_param() function?",
+        "options": "A. To record hyperparameters used for a run | B. To log into the MLflow server | C. To set up logging configuration | D. To define model parameters",
+        "answers": "A",
+        "explanation": "The mlflow.log_param() function records hyperparameters or input parameters used for a specific run, making the experiment reproducible and comparable."
+      },
+      {
+        "question": "When using Databricks MLflow, where are artifacts typically stored by default?",
+        "options": "A. Local filesystem only | B. DBFS (Databricks File System) | C. Always in S3/Azure Blob/ADLS | D. In a SQL database",
+        "answers": "B",
+        "explanation": "In Databricks, MLflow artifacts are typically stored in DBFS (Databricks File System) by default, though this can be configured to use other locations."
+      },
+      {
+        "question": "What is the purpose of model flavors in MLflow?",
+        "options": "A. To add different tastes to model results | B. To allow models to be deployed to different serving environments | C. To categorize models by machine learning task | D. To encrypt model data",
+        "answers": "B",
+        "explanation": "Model flavors in MLflow are a convention that deployment tools can use to understand how to load and run models from different ML libraries, allowing deployment to different serving environments."
+      },
+      {
+        "question": "What is the primary benefit of using Delta Tables for machine learning feature data?",
+        "options": "A. They are the only format compatible with Databricks | B. They provide ACID transactions and time travel capabilities | C. They eliminate the need for feature engineering | D. They train models faster",
+        "answers": "B",
+        "explanation": "Delta Tables provide ACID transactions and time travel capabilities, making them reliable for storing ML feature data with the ability to reproduce training datasets from specific points in time."
+      },
+      {
+        "question": "Which statement about feature stores is correct?",
+        "options": "A. They automatically generate new features | B. They can serve features for both training and inference | C. They only work with structured data | D. They replace the need for data scientists",
+        "answers": "B",
+        "explanation": "Feature stores can serve features for both model training (typically batch processing) and inference (both batch and real-time), ensuring consistency between environments."
+      },
+      {
+        "question": "What is a common approach to monitoring deployed ML models?",
+        "options": "A. Manual inspection of random predictions | B. Automated tracking of data distributions and model metrics | C. Weekly retraining regardless of performance | D. Relying solely on user feedback",
+        "answers": "B",
+        "explanation": "Automated tracking of input data distributions, output predictions, and performance metrics is a common approach to monitoring deployed ML models to detect drift and degradation."
+      },
+      {
+        "question": "Which is NOT a best practice for MLOps?",
+        "options": "A. Version control for both data and code | B. Automated testing and validation | C. Manual updates to production models | D. Continuous monitoring",
+        "answers": "C",
+        "explanation": "Manual updates to production models is not a best practice for MLOps, which emphasizes automation, reproducibility, and version control throughout the model lifecycle."
+      },
+      {
+        "question": "What is the main purpose of a CI/CD pipeline for ML models?",
+        "options": "A. To train models faster | B. To automate testing and deployment of models | C. To create visualizations | D. To generate training data",
+        "answers": "B",
+        "explanation": "The main purpose of a CI/CD (Continuous Integration/Continuous Deployment) pipeline for ML models is to automate the testing, validation, and deployment process, ensuring reliability and reproducibility."
+      },
+      {
+        "question": "Which MLflow component would you use to package ML code dependencies and make it reproducible?",
+        "options": "A. MLflow Tracking | B. MLflow Projects | C. MLflow Models | D. MLflow Registry",
+        "answers": "B",
+        "explanation": "MLflow Projects is a component that provides a standard format for packaging ML code in a way that makes it reproducible across different environments by specifying dependencies and entry points."
+      },
+      {
+        "question": "What is the purpose of blue-green deployment for ML models?",
+        "options": "A. To deploy models to different cloud providers | B. To deploy colorful visualizations | C. To switch between two identical environments for zero-downtime deployment | D. To deploy models with different programming languages",
+        "answers": "C",
+        "explanation": "Blue-green deployment maintains two identical environments (blue and green) and switches traffic between them to achieve zero-downtime deployments and easy rollbacks if issues occur."
+      },
+      {
+        "question": "What is a common way to detect data drift in production ML systems?",
+        "options": "A. Manual inspection of all data | B. Statistical tests comparing training and production data distributions | C. Using only business metrics | D. Waiting for user complaints",
+        "answers": "B",
+        "explanation": "Statistical tests comparing the distributions of features in training data versus production data are commonly used to detect data drift in production ML systems."
+      },
+      {
+        "question": "Why might you choose TrainValidationSplit over CrossValidator for tuning?",
+        "options": "A. It gives better model accuracy | B. It supports more model types | C. It is faster to run on large datasets | D. It requires fewer hyperparameters",
+        "answers": "C",
+        "explanation": "TrainValidationSplit is faster because it only splits once, making it ideal for large datasets where CrossValidator's k-fold logic is computationally expensive."
+      },
+      {
+        "question": "When using MLflow with Databricks, which option is NOT a valid experiment tracking location?",
+        "options": "A. Databricks workspace | B. Local filesystem | C. Remote HTTP server | D. AWS S3 bucket",
+        "answers": "D",
+        "explanation": "MLflow on Databricks supports three tracking URI locations: Databricks workspace (databricks), local filesystem (file), and remote HTTP server (http), but not direct S3 buckets as tracking locations."
+      },
+      {
+        "question": "Which of the following would detect concept drift in a machine learning model?",
+        "options": "A. Monitoring changes in input feature statistics | B. Monitoring changes in prediction distributions | C. Monitoring model performance metrics | D. Monitoring system latency",
+        "answers": "B",
+        "explanation": "Concept drift occurs when the relationship between input features and the target variable changes. Monitoring changes in prediction distributions (concept drift) can help detect this, while changes in input feature statistics indicate data drift."
+      },
+      {
+        "question": "Which command-line MLflow command is used to serve a model locally for testing?",
+        "options": "A. mlflow run | B. mlflow serve | C. mlflow models serve | D. mlflow deployments serve",
+        "answers": "C",
+        "explanation": "The 'mlflow models serve' command is used to deploy and serve a model locally for testing purposes before production deployment."
+      },
+      {
+        "question": "What is the purpose of the 'feature_spec.json' file when deploying models to Databricks Model Serving?",
+        "options": "A. It contains the hyperparameters used during training | B. It defines the expected input schema for model inference | C. It specifies the required compute resources | D. It configures the model's scaling policy",
+        "answers": "B",
+        "explanation": "The feature_spec.json file defines the expected input schema for model inference, ensuring the serving endpoint correctly interprets the structure of input data."
+      },
+      {
+        "question": "In the context of MLflow model registry, what state does a model version have after being transitioned from 'Staging' to 'Production' when using the 'archive_existing_versions' parameter set to True?",
+        "options": "A. Deleted | B. Archived | C. Deprecated | D. Staged",
+        "answers": "B",
+        "explanation": "When transitioning a model to Production with 'archive_existing_versions=True', all existing Production versions are automatically moved to the Archived state."
+      },
+      {
+        "question": "Which of the following is NOT a valid stage in the MLflow Model Registry lifecycle?",
+        "options": "A. None | B. Staging | C. Testing | D. Production",
+        "answers": "C",
+        "explanation": "The valid stages in the MLflow Model Registry are None (unregistered), Staging, Production, and Archived. There is no 'Testing' stage in the standard MLflow lifecycle."
+      },
+      {
+        "question": "Which of these approaches is most suited for detecting data drift in numeric features?",
+        "options": "A. Kullback-Leibler divergence | B. Population Stability Index (PSI) | C. Chi-squared test | D. Jaccard similarity",
+        "answers": "B",
+        "explanation": "Population Stability Index (PSI) is specifically designed to measure how much a distribution has shifted and is commonly used for detecting drift in numeric features. Values above 0.25 typically indicate significant drift."
+      },
+      {
+        "question": "In Databricks Feature Store, what is the primary purpose of the publish_features() method?",
+        "options": "A. To share features with external systems | B. To make features available for scoring | C. To register features in the feature registry | D. To validate feature data quality",
+        "answers": "C",
+        "explanation": "The publish_features() method in Databricks Feature Store is used to register feature tables in the feature registry, making them discoverable and reusable across the organization."
+      },
+      {
+        "question": "Which MLflow component provides a user interface for searching and comparing experiments?",
+        "options": "A. MLflow Tracking | B. MLflow Projects | C. MLflow Models | D. MLflow Registry",
+        "answers": "A",
+        "explanation": "MLflow Tracking is the component that logs parameters, metrics, and artifacts to create a record of ML experiments, and provides a user interface for searching and comparing experiments."
+      },
+      {
+        "question": "When using Auto ML in Databricks, which of the following is NOT automatically handled for you?",
+        "options": "A. Feature engineering | B. Algorithm selection | C. Hyperparameter tuning | D. Business impact analysis",
+        "answers": "D",
+        "explanation": "Databricks Auto ML automatically handles feature engineering, algorithm selection, and hyperparameter tuning, but business impact analysis is a domain-specific task that requires human expertise and context."
+      },
+      {
+        "question": "What is the purpose of the 'mlflow.evaluate()' function?",
+        "options": "A. To calculate model metrics | B. To compare model predictions against baselines | C. To evaluate a model's production readiness | D. To generate automatic documentation",
+        "answers": "B",
+        "explanation": "The mlflow.evaluate() function evaluates a model's performance against baseline models, computing metrics and generating visualizations to help assess model quality and fairness."
+      },
+      {
+        "question": "When implementing online model monitoring in Databricks, which component is needed to collect real-time inference data?",
+        "options": "A. Delta Live Tables | B. Databricks Model Serving | C. MLflow Model Registry | D. Databricks Jobs",
+        "answers": "B",
+        "explanation": "Databricks Model Serving is used to deploy models for online inference and can be configured to collect inference data for monitoring data drift and model performance in real-time scenarios."
+      },
+      {
+        "question": "What is the difference between model.save() and mlflow.spark.save_model() in Databricks?",
+        "options": "A. model.save() saves only the model while mlflow.spark.save_model() saves model with metadata | B. model.save() works with any model while mlflow.spark.save_model() only works with Spark models | C. model.save() is for local saving while mlflow.spark.save_model() is for distributed saving | D. model.save() is deprecated while mlflow.spark.save_model() is the recommended approach",
+        "answers": "A",
+        "explanation": "model.save() only saves the model file itself, while mlflow.spark.save_model() saves the model along with its metadata, dependencies, and input example, enabling better reproducibility and deployment."
+      },
+      {
+        "question": "Which component is essential for setting up automatic retraining pipelines in Databricks?",
+        "options": "A. Databricks Jobs | B. MLflow Projects | C. Delta Live Tables | D. Databricks Connect",
+        "answers": "A",
+        "explanation": "Databricks Jobs is essential for setting up automatic retraining pipelines as it provides scheduling capabilities, dependency management, and integration with other Databricks components like MLflow tracking."
+      },
+      {
+        "question": "What is the key difference between Batch Inference and Model Serving in Databricks?",
+        "options": "A. The programming language used | B. The latency requirements | C. The security model | D. The monitoring capabilities",
+        "answers": "B",
+        "explanation": "The key difference is latency requirements. Batch inference processes large volumes of data with higher latency (minutes to hours), while Model Serving is designed for real-time inference with low latency (milliseconds to seconds)."
+      },
+      {
+        "question": "Which method would you use to load a model from the MLflow model registry into a Databricks notebook for inference?",
+        "options": "A. mlflow.pyfunc.load_model('models:/ModelName/ProductionVersion') | B. mlflow.spark.load_model('models:/ModelName/ProductionVersion') | C. mlflow.sklearn.load_model('models:/ModelName/ProductionVersion') | D. All of the above are valid depending on the model type",
+        "answers": "D",
+        "explanation": "All options are valid depending on the model type. The appropriate load function depends on the flavor of the model: pyfunc for universal loading, spark for Spark models, sklearn for scikit-learn models."
+      },
+      {
+        "question": "Which of the following is NOT a supported deployment target for MLflow models in Databricks?",
+        "options": "A. Databricks Model Serving | B. Batch inference using Jobs | C. Real-time streaming inference using Structured Streaming | D. Kubernetes deployment using Kubeflow",
+        "answers": "D",
+        "explanation": "Databricks supports Model Serving, batch inference using Jobs, and streaming inference using Structured Streaming, but does not natively support Kubernetes deployment using Kubeflow without additional integration work."
+      },
+      {
+        "question": "When implementing automated model validation in CI/CD pipelines, which metric should be used to detect potential data leakage?",
+        "options": "A. Difference between training and validation scores | B. Model latency | C. Feature importance stability | D. Memory usage",
+        "answers": "A",
+        "explanation": "A significant difference between training and validation scores can indicate data leakage, where information from the validation set has leaked into the training process, leading to overly optimistic training metrics."
+      },
+      {
+        "question": "Which of these is NOT a valid technique for handling model versioning in Databricks?",
+        "options": "A. Using the MLflow Model Registry | B. Storing model artifacts in Git repositories | C. Using different experiment IDs for different versions | D. Using the version field in Spark ML pipelines",
+        "answers": "D",
+        "explanation": "Spark ML pipelines do not have a native version field. Proper model versioning in Databricks is typically handled using the MLflow Model Registry, Git integration, or different experiment IDs."
+      },
+      {
+        "question": "Which Databricks feature allows you to track feature lineage across your ML pipeline?",
+        "options": "A. MLflow Tracking | B. Delta Live Tables | C. Feature Store | D. Unity Catalog",
+        "answers": "C",
+        "explanation": "Databricks Feature Store provides feature lineage tracking, allowing you to understand where feature data comes from, how it's computed, and where it's used across models and applications."
+      },
+      {
+        "question": "In MLflow, what is the primary purpose of model signatures?",
+        "options": "A. To digitally sign the model for security | B. To specify the expected input and output schema | C. To verify model authorship | D. To ensure legal compliance",
+        "answers": "B",
+        "explanation": "Model signatures in MLflow specify the expected input and output schema of a model, helping to catch errors early when the model is loaded for inference with incompatible data formats."
+      },
+      {
+        "question": "Which technique would you use to monitor for concept drift when ground truth labels are delayed?",
+        "options": "A. A/B testing | B. Performance monitoring | C. Distribution monitoring | D. Shadow deployment",
+        "answers": "C",
+        "explanation": "When ground truth labels are delayed, distribution monitoring of prediction outputs can be used to detect concept drift by comparing the current distribution of predictions with the historical baseline."
+      },
+      {
+        "question": "Which of the following MLflow deployment modes provides the highest throughput for batch processing?",
+        "options": "A. MLflow Model Serving | B. Spark UDF | C. Databricks Jobs | D. REST API endpoints",
+        "answers": "B",
+        "explanation": "Using models as Spark UDFs provides the highest throughput for batch processing, as it allows models to be executed in parallel across the distributed Spark cluster without network overhead."
+      },
+      {
+        "question": "In Databricks Feature Store, what is the purpose of the 'point-in-time' lookup capability?",
+        "options": "A. To retrieve historical feature values for a specific timestamp | B. To ensure that features are calculated in real-time | C. To handle time zones correctly | D. To implement feature versioning",
+        "answers": "A",
+        "explanation": "Point-in-time lookup in Feature Store allows retrieving feature values as they were at a specific timestamp, which is crucial for training models without data leakage by ensuring you only use feature values that would have been available at prediction time."
+      },
+      {
+        "question": "Which approach is best for managing multi-stage ML pipelines with dependencies in Databricks?",
+        "options": "A. Using Notebooks with widgets | B. Using Delta Live Tables with pipeline dependencies | C. Using MLflow Projects | D. Using Databricks Jobs with task dependencies",
+        "answers": "D",
+        "explanation": "Databricks Jobs with task dependencies is the recommended approach for managing multi-stage ML pipelines, as it allows defining clear dependencies between tasks, handles retries, and provides monitoring and alerting capabilities."
+      },
+      {
+        "question": "What is the primary advantage of using feature tables in Databricks Feature Store compared to ad-hoc feature computation?",
+        "options": "A. Better performance | B. Feature sharing and reuse | C. Automatic feature engineering | D. Simplified deployment",
+        "answers": "B",
+        "explanation": "The primary advantage of Feature Store is enabling feature sharing and reuse across different models and teams, ensuring consistency between training and inference while reducing duplication of feature engineering efforts."
+      },
+      {
+        "question": "Which technique helps detect outliers in production data that might cause model performance degradation?",
+        "options": "A. A/B testing | B. Distribution monitoring | C. Adversarial validation | D. Champion-challenger testing",
+        "answers": "B",
+        "explanation": "Distribution monitoring of input features in production can help detect outliers or shifts in the data distribution that might cause model performance degradation, alerting teams before significant issues arise."
+      },
+      {
+        "question": "When implementing feature engineering in Databricks, what is the main advantage of using Delta Live Tables over standard Delta Tables?",
+        "options": "A. Better performance | B. Declarative data quality constraints | C. Higher data compression | D. More flexible schema enforcement",
+        "answers": "B",
+        "explanation": "Delta Live Tables provide declarative data quality constraints that can be applied to feature engineering pipelines, ensuring that feature data meets quality standards before being used in model training or inference."
+      },
+      {
+        "question": "Which approach is recommended for managing ML model dependencies in Databricks?",
+        "options": "A. Using conda environments | B. Using Docker containers | C. Using MLflow model dependencies | D. Using requirements.txt files",
+        "answers": "C",
+        "explanation": "MLflow model dependencies are recommended in Databricks as they are automatically captured during model logging and ensure consistent environments across development, testing, and production deployments."
+      },
+      {
+        "question": "What is the recommended method for retraining ML models when using Delta tables in Databricks?",
+        "options": "A. Full retraining with all historical data | B. Incremental training using Delta table versioning | C. Online learning with streaming data | D. Transfer learning from a pre-trained model",
+        "answers": "B",
+        "explanation": "Incremental training using Delta table versioning is recommended as it allows efficient retraining on only new data since the last training run, using time travel capabilities to ensure reproducibility and consistency."
+      },
+      {
+        "question": "When organizing ML experiments in Databricks, which best practice should you follow?",
+        "options": "A. Use a single experiment for all models | B. Create a new experiment for each model iteration | C. Group related models in the same experiment | D. Randomly assign experiments to avoid bias",
+        "answers": "C",
+        "explanation": "Grouping related models (e.g., models solving the same problem but with different algorithms or hyperparameters) in the same experiment makes it easier to compare their performance and track progress over time."
+      },
+      {
+        "question": "In Databricks, when should you use model registry webhooks?",
+        "options": "A. To automatically trigger retraining | B. To automate deployment workflows | C. To integrate with monitoring systems | D. All of the above",
+        "answers": "D",
+        "explanation": "Model registry webhooks can be used for all these purposes: triggering retraining when models are archived, automating deployment when models are moved to production, and integrating with monitoring systems for comprehensive lifecycle management."
+      },
+      {
+        "question": "Which method is used to automatically tune hyperparameters of an ML model in Databricks using MLflow?",
+        "options": "A. mlflow.autotune() | B. mlflow.tune.hyperopt() | C. mlflow.hyperopt() | D. Databricks does not offer native hyperparameter tuning",
+        "answers": "D",
+        "explanation": "While Databricks supports hyperparameter tuning through libraries like Hyperopt or with Spark's CrossValidator, there is no native 'mlflow.tune' or 'mlflow.autotune' function. You need to implement tuning logic and track results with MLflow."
+      },
+      {
+        "question": "Which feature in Databricks helps ensure reproducibility of ML experiments?",
+        "options": "A. Experiment tracking in MLflow | B. Delta Time Travel | C. Git integration | D. All of the above",
+        "answers": "D",
+        "explanation": "All three features contribute to reproducibility: MLflow tracks parameters, metrics, and artifacts; Delta Time Travel provides versioned datasets; and Git integration ensures code versioning."
+      },
+      {
+        "question": "What is the primary purpose of the MLflow Model Registry 'transition-request' endpoint?",
+        "options": "A. To request movement of a model between stages | B. To implement approval workflows for model transitions | C. To create new model versions | D. To track model transitions history",
+        "answers": "B",
+        "explanation": "The 'transition-request' endpoint in the MLflow Model Registry API implements approval workflows for model transitions, allowing team members to request state changes that require approval from designated approvers."
+      },
+      {
+        "question": "When setting up model monitoring in Databricks, which technique helps detect seasonality-related drift?",
+        "options": "A. Using a longer baseline period | B. Implementing time-stratified comparisons | C. Increasing monitoring frequency | D. Using more complex statistical tests",
+        "answers": "B",
+        "explanation": "Time-stratified comparisons (comparing current data with historical data from the same season, day of week, or time of day) help detect drift patterns related to seasonality rather than actual model or data issues."
+      },
+      {
+        "question": "Which approach would you recommend for deploying machine learning models that require low-latency inference (<100ms) in Databricks?",
+        "options": "A. Databricks Model Serving | B. Spark Structured Streaming | C. Batch inference with Delta tables | D. External deployment with model export",
+        "answers": "A",
+        "explanation": "Databricks Model Serving is optimized for low-latency inference requirements, providing response times under 100ms with automatic scaling and high availability for real-time applications."
+      },
+      {
+        "question": "Which feature of Delta Lake is most important for ensuring data quality in feature engineering pipelines?",
+        "options": "A. ACID transactions | B. Schema enforcement | C. Time travel | D. Optimized reads",
+        "answers": "B",
+        "explanation": "Schema enforcement in Delta Lake prevents data corruption by ensuring that all data written to a table conforms to the expected schema, which is crucial for maintaining feature data quality and consistency."
+      },
+      {
+        "question": "When implementing CI/CD for ML models in Databricks, which approach is recommended for model testing?",
+        "options": "A. Manual testing before deployment | B. Automated testing with reference datasets | C. A/B testing in production | D. Shadow deployment",
+        "answers": "B",
+        "explanation": "Automated testing with reference datasets is recommended for CI/CD pipelines, as it allows validating model performance, data quality, and business logic before promoting models to production environments."
+      },
+      {
+        "question": "In the context of MLflow, what does the 'mlflow.log_artifact()' function do that 'mlflow.log_param()' does not?",
+        "options": "A. It logs numeric metrics | B. It logs files rather than simple values | C. It captures model configurations | D. It triggers model versioning",
+        "answers": "B",
+        "explanation": "mlflow.log_artifact() logs files (like model visualizations, feature importance plots, or datasets) to MLflow tracking, while mlflow.log_param() only logs simple key-value parameters."
+      },
+      {
+        "question": "Which approach is most effective for handling concept drift in a production ML system?",
+        "options": "A. Retraining models at fixed intervals | B. Using more robust algorithms | C. Implementing continuous monitoring with triggered retraining | D. Using ensemble models",
+        "answers": "C",
+        "explanation": "Continuous monitoring with triggered retraining is most effective for handling concept drift, as it allows the system to adapt to changes in the underlying data relationships only when needed, based on detected drift."
+      },
+      {
+        "question": "When using Delta tables for feature engineering in Databricks, which operation is most efficient for updating feature values?",
+        "options": "A. INSERT OVERWRITE | B. DELETE followed by INSERT | C. UPDATE | D. MERGE",
+        "answers": "D",
+        "explanation": "MERGE operations in Delta tables are the most efficient for updating feature values as they allow atomic upserts, combining insert, update, and delete operations in a single transaction with better performance than separate operations."
+      },
+      {
+        "question": "What is the primary purpose of the 'custom_predict' method when creating a custom model wrapper in MLflow?",
+        "options": "A. To implement preprocessing logic | B. To define a custom prediction implementation | C. To optimize batch predictions | D. To handle post-processing of model outputs",
+        "answers": "B",
+        "explanation": "The custom_predict method in MLflow model wrappers allows defining a custom prediction implementation, particularly useful when the model requires special handling, preprocessing, or postprocessing beyond what standard flavors provide."
+      },
+      {
+        "question": "Which statement about Databricks Model Serving is FALSE?",
+        "options": "A. It supports real-time feature lookups from Feature Store | B. It integrates with MLflow for model loading | C. It can serve any model format regardless of framework | D. It supports automatic scaling based on traffic patterns",
+        "answers": "C",
+        "explanation": "Databricks Model Serving does not support all model formats regardless of framework. It works with models logged with MLflow, which supports many but not all frameworks and requires proper packaging and dependencies."
+      },
+      {
+        "question": "When implementing feature engineering pipelines in Databricks, which technique is most effective for handling missing values in time series data?",
+        "options": "A. Simple imputation with means or medians | B. Forward filling with previous values | C. Using machine learning models to predict missing values | D. Removing records with missing values",
+        "answers": "B",
+        "explanation": "Forward filling (carrying forward the last known value) is most effective for time series data as it preserves temporal relationships and accounts for the sequential nature of the data, unlike mean imputation or dropping records."
+      },
+      {
+        "question": "Which deployment pattern is most suitable for high-stakes ML models that require careful validation?",
+        "options": "A. Blue-green deployment | B. Canary deployment | C. Shadow deployment | D. Rolling deployment",
+        "answers": "C",
+        "explanation": "Shadow deployment, where the new model runs in parallel with the existing model without affecting production traffic, is most suitable for high-stakes models as it allows thorough validation without risk to production systems."
+      },
+      {
+        "question": "What is the key advantage of using the 'mlflow.evaluate()' function over custom evaluation code?",
+        "options": "A. It's faster | B. It supports more metrics | C. It automatically logs evaluation results and visualizations | D. It's more accurate",
+        "answers": "C",
+        "explanation": "The key advantage of mlflow.evaluate() is that it automatically logs evaluation results, metrics, and visualizations to MLflow tracking, providing a standardized approach to model evaluation with built-in best practices."
+      },
+      {
+        "question": "Which method is most efficient for serving models with large feature vectors in Databricks?",
+        "options": "A. Running the model as a Python UDF | B. Using Databricks Model Serving with feature lookup | C. Using vectorized Spark UDFs | D. Exporting the model to a specialized serving platform",
+        "answers": "C",
+        "explanation": "Vectorized Spark UDFs can process multiple rows in a single function call, making them most efficient for models with large feature vectors in batch processing scenarios by reducing serialization overhead."
+      },
+      {
+        "question": "What is the best practice for ensuring model fairness in Databricks?",
+        "options": "A. Using more complex algorithms | B. Including bias metrics in model evaluation | C. Removing sensitive features from training data | D. Using more training data",
+        "answers": "B",
+        "explanation": "Including bias metrics (like statistical parity difference or equal opportunity difference) in model evaluation is the best practice for ensuring fairness, as it allows quantifying and tracking potential biases across different demographic groups."
+      },
+      {
+        "question": "Which approach is most effective for monitoring model drift in a high-throughput production system?",
+        "options": "A. Evaluating the full dataset daily | B. Sampling production data for drift detection | C. Using A/B testing | D. Manual review of model outputs",
+        "answers": "B",
+        "explanation": "Sampling production data for drift detection is most effective for high-throughput systems, as it reduces computational overhead while still providing statistically significant drift detection without processing the entire dataset."
+      },
+      {
+        "question": "What is the recommended method for managing secrets in Databricks ML workflows?",
+        "options": "A. Using environment variables | B. Storing in notebooks | C. Using Databricks secrets scope | D. Hardcoding in model code",
+        "answers": "C",
+        "explanation": "Using Databricks secrets scope is recommended for managing sensitive information like API keys or credentials, as it provides secure storage with access controls and integration with Databricks workflows and jobs."
+      },
+      {
+        "question": "When implementing a Feature Store in Databricks, what is the purpose of 'online tables'?",
+        "options": "A. To store features that change frequently | B. To optimize low-latency lookups for inference | C. To track feature lineage | D. To enable feature versioning",
+        "answers": "B",
+        "explanation": "Online tables in Databricks Feature Store are optimized for low-latency lookups during model inference, typically stored in formats that enable fast, high-throughput access for real-time applications."
+      },
+      {
+        "question": "Which component in Databricks is best suited for implementing real-time feature engineering?",
+        "options": "A. Delta Live Tables | B. Structured Streaming | C. Databricks Jobs | D. MLflow Projects",
+        "answers": "B",
+        "explanation": "Structured Streaming is best suited for real-time feature engineering, as it provides continuous processing of data streams with exactly-once semantics and can be integrated with the Feature Store for low-latency feature computation."
+      },
+      {
+        "question": "In the context of MLflow, what is the purpose of the 'mlflow.autolog()' function?",
+        "options": "A. To automatically deploy models | B. To automatically log parameters, metrics, and models | C. To implement automatic feature engineering | D. To enable automatic model retraining",
+        "answers": "B",
+        "explanation": "mlflow.autolog() automatically logs parameters, metrics, and models for supported ML libraries (like scikit-learn, TensorFlow, PyTorch) without requiring explicit logging statements, simplifying experiment tracking."
+      },
+      {
+        "question": "Which approach is recommended for handling large-scale feature engineering in Databricks?",
+        "options": "A. Using pandas on single-node processing | B. Using Koalas for Spark-based processing | C. Using distributed Spark DataFrames | D. Using Python UDFs in Spark",
+        "answers": "C",
+        "explanation": "Using distributed Spark DataFrames is recommended for large-scale feature engineering in Databricks, as they leverage the full power of the cluster for distributed processing and scale to petabytes of data."
+      },
+      {
+        "question": "What is the main advantage of using Unity Catalog with MLflow in Databricks?",
+        "options": "A. Improved query performance | B. Enhanced data security and governance | C. Better visualization capabilities | D. Simplified model development",
+        "answers": "B",
+        "explanation": "The main advantage of Unity Catalog with MLflow is enhanced data security and governance, providing fine-grained access controls, audit logging, and lineage tracking for ML assets across the organization."
+      },
+      {
+        "question": "What is the purpose of the 'model_uri' parameter in Databricks Model Serving configuration?",
+        "options": "A. To specify the model's location in cloud storage | B. To point to a registered model in the Model Registry | C. To define the model's API endpoint | D. To identify the model's framework",
+        "answers": "B",
+        "explanation": "The 'model_uri' parameter in Model Serving configuration points to a registered model in the Model Registry, typically in the format 'models:/model_name/version_or_stage', allowing serving endpoints to load the appropriate model version."
+      },
+      {
+        "question": "Which technique is most effective for detecting data drift in categorical features?",
+        "options": "A. Kolmogorov-Smirnov test | B. Chi-square test | C. Earth Mover's Distance | D. Population Stability Index",
+        "answers": "B",
+        "explanation": "The Chi-square test is most effective for detecting data drift in categorical features as it measures differences in observed frequency distributions between the reference and current datasets."
+      },
+      {
+        "question": "What is the recommended approach for implementing model-specific preprocessing logic in MLflow?",
+        "options": "A. Including preprocessing in the model class | B. Using Pipeline objects | C. Creating a custom model flavor | D. Using preprocessing hooks",
+        "answers": "C",
+        "explanation": "Creating a custom model flavor is recommended for implementing model-specific preprocessing logic in MLflow, as it encapsulates both preprocessing and model logic in a single deployable unit that ensures consistency."
+      },
+      {
+        "question": "Which Databricks capability is most useful for implementing automated model governance workflows?",
+        "options": "A. Repos | B. Jobs | C. Model Registry webhooks | D. Notebooks",
+        "answers": "C",
+        "explanation": "Model Registry webhooks are most useful for implementing automated model governance workflows, as they allow triggering external processes when models change state, enabling approval workflows, validation, and compliance checks."
+      },
+      {
+        "question": "What is the primary advantage of using the MLflow Model Registry for model deployment?",
+        "options": "A. Faster serving speed | B. Version control and stage transitions | C. Better monitoring capabilities | D. Higher scalability",
+        "answers": "B",
+        "explanation": "The primary advantage of the MLflow Model Registry for model deployment is version control and stage transitions, allowing models to be promoted through staging, production, and archived stages with proper controls and tracking."
+      },
+      {
+        "question": "Which approach is most effective for detecting model degradation over time?",
+        "options": "A. Monitoring input data distributions | B. Monitoring system resources | C. Monitoring prediction accuracy against ground truth | D. Monitoring model latency",
+        "answers": "C",
+        "explanation": "Monitoring prediction accuracy against ground truth (when available) is most effective for detecting model degradation over time, as it directly measures how well the model is performing its intended task."
+      },
+      {
+        "question": "In MLflow, how does the 'mlflow.start_run()' context manager improve experiment tracking?",
+        "options": "A. Automatically logs all parameters | B. Ensures run termination even if errors occur | C. Parallelizes hyperparameter tuning | D. Reduces model training time",
+        "answers": "B",
+        "explanation": "The context manager ensures runs are properly terminated, even if exceptions occur, preventing orphaned runs."
+      },
+      {
+        "question": "Which of the following is a key advantage of using Feature Store in Databricks?",
+        "options": "A. Eliminates the need for feature engineering | B. Enables feature sharing across models and teams | C. Automatically optimizes hyperparameters | D. Reduces training data storage costs",
+        "answers": "B",
+        "explanation": "Feature Store centralizes and version-controls features, enabling reuse and consistency across projects."
+      },
+      {
+        "question": "When deploying a model with MLflow, what is the purpose of the 'conda.yaml' file?",
+        "options": "A. Defines the model's architecture | B. Specifies the Python dependencies for reproducibility | C. Configures autoscaling for inference clusters | D. Stores training data schemas",
+        "answers": "B",
+        "explanation": "'conda.yaml' ensures the model's environment (dependencies) is replicated during deployment."
+      },
+      {
+        "question": "Why would you enable 'enable_mlflow_integration' in Databricks AutoML?",
+        "options": "A. To skip cross-validation | B. To automatically log experiments to MLflow | C. To disable feature importance | D. To reduce GPU usage",
+        "answers": "B",
+        "explanation": "This flag ensures AutoML trials are logged to MLflow for traceability and comparison."
+      },
+      {
+        "question": "What is the primary purpose of a Delta Lake schema enforcement when serving ML models?",
+        "options": "A. To encrypt inference data | B. To validate data types and prevent drift | C. To compress feature vectors | D. To parallelize batch inference",
+        "answers": "B",
+        "explanation": "Schema enforcement ensures incoming data matches the expected structure, reducing drift-related errors."
+      },
+      {
+        "question": "Which MLflow component is used to compare runs and select the best model?",
+        "options": "A. MLflow Tracking | B. MLflow Projects | C. MLflow Models | D. MLflow Registry",
+        "answers": "A",
+        "explanation": "MLflow Tracking UI allows visualizing and comparing metrics/parameters across runs."
+      },
+      {
+        "question": "In Databricks, what is the purpose of the 'served_models' table in MLflow Model Registry?",
+        "options": "A. Tracks model lineage | B. Stores inference request logs | C. Lists deployed model versions | D. Monitors GPU utilization",
+        "answers": "C",
+        "explanation": "The 'served_models' table provides visibility into currently deployed model versions."
+      },
+      {
+        "question": "How does Databricks Jobs API enhance ML model deployment?",
+        "options": "A. By automatically retraining models | B. By scheduling and monitoring inference pipelines | C. By generating synthetic data | D. By optimizing Spark configurations",
+        "answers": "B",
+        "explanation": "The Jobs API allows orchestration of batch inference or retraining workflows."
+      },
+      {
+        "question": "What is the effect of setting 'load_context' in a Spark UDF for ML inference?",
+        "options": "A. Reduces serialization overhead | B. Enables GPU acceleration | C. Forces single-threaded execution | D. Skips schema validation",
+        "answers": "A",
+        "explanation": "'load_context' minimizes repeated model loading in distributed UDFs, improving efficiency."
+      },
+      {
+        "question": "Which tool would you use to detect feature drift in a deployed Databricks model?",
+        "options": "A. MLflow Artifacts | B. Databricks Feature Store | C. Lakehouse Monitoring | D. Spark MLlib",
+        "answers": "C",
+        "explanation": "Lakehouse Monitoring provides drift detection metrics for features and predictions."
+      },
+      {
+        "question": "When using HyperOpt with SparkTrials, what does 'spark.task.cpus' control?",
+        "options": "A. The number of hyperparameter combinations | B. CPU cores per trial task | C. The number of Spark executors | D. GPU memory allocation",
+        "answers": "B",
+        "explanation": "It configures parallelism by assigning CPU cores to each hyperparameter trial."
+      },
+      {
+        "question": "Why would you use a 'pyfunc' flavor in MLflow instead of a library-specific flavor?",
+        "options": "A. To bypass dependency management | B. For cross-library model deployment flexibility | C. To improve training speed | D. To enforce TensorFlow-only inference",
+        "answers": "B",
+        "explanation": "'pyfunc' provides a generic Python interface for models from any framework."
+      },
+      {
+        "question": "What is the purpose of a 'transition_request' in MLflow Model Registry?",
+        "options": "A. To approve model deletion | B. To move a model stage (e.g., Staging → Production) | C. To trigger autoscaling | D. To revoke API keys",
+        "answers": "B",
+        "explanation": "It formalizes stage transitions with optional approval workflows."
+      },
+      {
+        "question": "In Delta Lake, how does Z-ordering improve ML inference performance?",
+        "options": "A. By encrypting data | B. By co-locating related data on disk | C. By randomizing data partitions | D. By compressing feature store",
+        "answers": "B",
+        "explanation": "Z-ordering optimizes data skipping for faster predicate filtering during inference."
+      },
+      {
+        "question": "Which Databricks feature allows A/B testing of ML models in production?",
+        "options": "A. Feature Store | B. MLflow Model Registry | C. Serving Endpoints with traffic splitting | D. Databricks Notebooks",
+        "answers": "C",
+        "explanation": "Serving endpoints can split traffic between model versions for A/B testing."
+      },
+      {
+        "question": "What is the risk of disabling 'inference_schema' in MLflow model logging?",
+        "options": "A. Losing model reproducibility | B. Breaking dependency isolation | C. Allowing invalid input data during serving | D. Slowing down training",
+        "answers": "C",
+        "explanation": "The schema validates inputs; disabling it may lead to runtime errors."
+      },
+      {
+        "question": "How does 'enable_onnx' improve MLflow model deployment?",
+        "options": "A. By reducing model size | B. By enabling cross-platform inference | C. By automating hyperparameter tuning | D. By encrypting the model",
+        "answers": "B",
+        "explanation": "ONNX format ensures compatibility with diverse inference environments."
+      },
+      {
+        "question": "What is the purpose of a 'model signature' in MLflow?",
+        "options": "A. To digitally sign model artifacts | B. To enforce input/output schemas | C. To track GPU usage | D. To generate synthetic data",
+        "answers": "B",
+        "explanation": "Signatures define expected input/output data types and shapes."
+      },
+      {
+        "question": "Why would you use 'spark.sql.files.maxPartitionBytes' for feature engineering?",
+        "options": "A. To control partition size when reading data | B. To limit GPU memory | C. To disable schema inference | D. To increase shuffle partitions",
+        "answers": "A",
+        "explanation": "This config optimizes I/O parallelism during feature computation."
+      },
+      {
+        "question": "Which metric is most relevant for monitoring data drift in categorical features?",
+        "options": "A. Mean absolute error | B. KL divergence | C. R-squared | D. F1-score",
+        "answers": "B",
+        "explanation": "KL divergence measures distribution shifts between training and inference data."
+      },
+      {
+        "question": "When using MLflow's `log_model()` with a custom Python model, why would you override the `predict()` method instead of `predict_proba()`?",
+        "options": "A. To enforce binary classification | B. To support non-standard inference logic | C. To disable schema validation | D. To reduce model size",
+        "answers": "B",
+        "explanation": "Overriding `predict()` allows custom inference logic (e.g., post-processing) beyond standard scikit-learn methods."
+      },
+      {
+        "question": "What is the primary risk of using `spark_udf` for real-time model serving?",
+        "options": "A. High latency due to serialization | B. Incompatibility with Feature Store | C. Lack of GPU support | D. No schema enforcement",
+        "answers": "A",
+        "explanation": "Spark UDFs add serialization overhead, making them suboptimal for low-latency use cases compared to native serving."
+      },
+      {
+        "question": "Why would you enable `enable_spark_data_processing` in an MLflow pipeline?",
+        "options": "A. To force single-node execution | B. To leverage Spark for feature engineering | C. To disable MLflow tracking | D. To bypass dependency conflicts",
+        "answers": "B",
+        "explanation": "This flag ensures Spark is used for distributed data processing during model training/inference."
+      },
+      {
+        "question": "In the Model Registry, what does the `archive_existing_versions` flag do during model deployment?",
+        "options": "A. Deletes old model versions | B. Automatically archives non-production versions | C. Compresses model artifacts | D. Skips validation",
+        "answers": "B",
+        "explanation": "It archives existing model versions in the target stage (e.g., Production) to avoid conflicts."
+      },
+      {
+        "question": "Which Databricks feature would you use to enforce row-level permissions on feature tables?",
+        "options": "A. Delta Lake ACLs | B. Feature Store access control | C. MLflow permissions | D. Spark RDD partitioning",
+        "answers": "A",
+        "explanation": "Delta Lake ACLs integrate with Databricks security to restrict access at the row/column level."
+      },
+      {
+        "question": "What is the purpose of the `mlflow.evaluate()` API?",
+        "options": "A. To compare two MLflow experiments | B. To validate model performance on a dataset | C. To trigger hyperparameter tuning | D. To generate SHAP values",
+        "answers": "B",
+        "explanation": "It automates model evaluation (metrics, plots) on a test dataset and logs results to MLflow."
+      },
+      {
+        "question": "When using Feature Store, why would you specify a `lookup_key`?",
+        "options": "A. To encrypt features at rest | B. To join features during batch scoring | C. To disable versioning | D. To reduce storage costs",
+        "answers": "B",
+        "explanation": "`lookup_key` defines the join key (e.g., `user_id`) to retrieve features during inference."
+      },
+      {
+        "question": "How does setting `timeout` in a Databricks Serving Endpoint affect inference?",
+        "options": "A. Terminates requests exceeding the duration | B. Enables cold-start caching | C. Skips schema validation | D. Disables autoscaling",
+        "answers": "A",
+        "explanation": "Requests taking longer than `timeout` (seconds) are cancelled to free resources."
+      },
+      {
+        "question": "Why would you log a `conda.yaml` file separately from the MLflow model?",
+        "options": "A. To share dependencies across multiple models | B. To bypass pip conflicts | C. To reduce artifact size | D. To disable environment recreation",
+        "answers": "A",
+        "explanation": "Separate logging allows reusing the same environment for multiple models (e.g., in a pipeline)."
+      },
+      {
+        "question": "What is the effect of `spark.databricks.delta.optimizeWrite.enabled` on feature engineering?",
+        "options": "A. Merges small files into larger partitions | B. Disables Z-ordering | C. Skips statistics collection | D. Forces single-threaded writes",
+        "answers": "A",
+        "explanation": "Optimized writes reduce small-file problems during feature computation, improving I/O efficiency."
+      },
+      {
+        "question": "Which MLflow feature ensures a model cannot be deployed if training data drift exceeds a threshold?",
+        "options": "A. Model Registry approvals | B. Validation rules in `mlflow.evaluate()` | C. Delta Lake constraints | D. Feature Store metadata",
+        "answers": "B",
+        "explanation": "`mlflow.evaluate()` can enforce validation rules (e.g., max drift) before deployment."
+      },
+      {
+        "question": "Why would you use `mlflow.pyfunc.spark_udf()` instead of a Pandas UDF for batch inference?",
+        "options": "A. To avoid serialization overhead | B. To support GPU acceleration | C. To leverage native Spark vectorized operations | D. To bypass the Feature Store",
+        "answers": "C",
+        "explanation": "The Spark UDF wrapper optimizes inference by batching rows and using Spark's execution engine."
+      },
+      {
+        "question": "What is the purpose of the `max_timestamp` parameter in Feature Store time-travel queries?",
+        "options": "A. To limit historical data scans | B. To enforce encryption | C. To disable versioning | D. To trigger retraining",
+        "answers": "A",
+        "explanation": "It restricts feature retrieval to data as of a specific timestamp, reducing compute cost."
+      },
+      {
+        "question": "How does `enable_artifact_logging` in AutoML affect experiment tracking?",
+        "options": "A. Logs trained models as MLflow artifacts | B. Skips metric logging | C. Disables feature importance | D. Forces single-node training",
+        "answers": "A",
+        "explanation": "When enabled, AutoML saves model binaries (artifacts) for reproducibility."
+      },
+      {
+        "question": "Which Databricks API would you use to programmatically transition a model to 'Archived'?",
+        "options": "A. `mlflow.transition_model_version_stage()` | B. `mlflow.delete_model()` | C. `mlflow.archive_run()` | D. `mlflow.set_tag()`",
+        "answers": "A",
+        "explanation": "This API updates the model's stage in the Registry, including archiving."
+      },
+      {
+        "question": "What is the risk of disabling `stderr` logging in a Databricks Job running ML inference?",
+        "options": "A. Losing debug logs for failed requests | B. Breaking schema validation | C. Slowing down autoscaling | D. Disabling feature lookups",
+        "answers": "A",
+        "explanation": "Stderr logs capture runtime errors; disabling them complicates debugging."
+      },
+      {
+        "question": "Why would you specify `synchronous=False` in `mlflow.deploy()`?",
+        "options": "A. To queue deployments during peak hours | B. To allow async model loading in the endpoint | C. To skip dependency checks | D. To disable traffic splitting",
+        "answers": "B",
+        "explanation": "Async deployment avoids blocking until the model is fully loaded, improving responsiveness."
+      },
+      {
+        "question": "How does `spark.task.resource.gpu.amount` affect HyperOpt with SparkTrials?",
+        "options": "A. Assigns GPUs per hyperparameter trial | B. Limits total cluster GPU usage | C. Disables GPU acceleration | D. Forces CPU-only training",
+        "answers": "A",
+        "explanation": "It allocates GPUs to each trial task, enabling distributed GPU-accelerated tuning."
+      },
+      {
+        "question": "What is the purpose of the `validation` parameter in `mlflow.register_model()`?",
+        "options": "A. To compare against a baseline model | B. To enforce schema compatibility | C. To skip artifact logging | D. To disable versioning",
+        "answers": "A",
+        "explanation": "It validates that the new model meets performance thresholds vs. a baseline before registration."
+      },
+      {
+        "question": "Why would you use a `DeltaTable` instead of a Spark DataFrame for feature backfilling?",
+        "options": "A. To leverage ACID transactions | B. To disable schema evolution | C. To reduce logging overhead | D. To force single-threaded writes",
+        "answers": "A",
+        "explanation": "DeltaTable ensures atomic updates during backfills, preventing partial writes."
+      },
+      {
+        "question": "When using MLflow's model registry webhooks, what is the primary advantage of setting up a 'MODEL_VERSION_TRANSITIONED_STAGE' event trigger?",
+        "options": "A. To automatically retrain models when data drift is detected | B. To integrate with CI/CD pipelines when models are promoted | C. To delete old model versions when new ones are registered | D. To disable model serving endpoints during transitions",
+        "answers": "B",
+        "explanation": "This webhook triggers when a model version's stage changes (e.g., Staging → Production), enabling automated CI/CD workflows."
+      },
+      {
+        "question": "What is the key difference between SparkTrials and normal HyperOpt trials when tuning PyTorch models on Databricks?",
+        "options": "A. SparkTrials parallelizes across Spark workers while maintaining GPU acceleration | B. Normal trials are faster but less accurate | C. SparkTrials only works with CPU-based models | D. Normal trials automatically log to MLflow while SparkTrials do not",
+        "answers": "A",
+        "explanation": "SparkTrials distributes hyperparameter tuning across Spark cluster nodes while still allowing each trial to use GPUs when available."
+      },
+      {
+        "question": "When enabling feature store time travel for model training, what happens if you specify both 'timestamp' and 'version' parameters?",
+        "options": "A. The system uses whichever parameter is more recent | B. The system throws an error due to conflict | C. The system prioritizes 'version' over 'timestamp' | D. The system merges features from both specifications",
+        "answers": "B",
+        "explanation": "Databricks Feature Store requires choosing either timestamp-based or version-based time travel, not both simultaneously."
+      },
+      {
+        "question": "What is the primary purpose of the 'get_model_dependencies()' method in MLflow pyfunc models?",
+        "options": "A. To list all Python packages required for inference | B. To check for dependency conflicts with the cluster | C. To automatically install missing dependencies | D. To validate GPU driver compatibility",
+        "answers": "A",
+        "explanation": "This method programmatically retrieves the model's Python dependencies as specified in conda.yaml or requirements.txt."
+      },
+      {
+        "question": "When configuring a Databricks Model Serving endpoint with GPU acceleration, why would you set 'scale_to_zero_enabled=False'?",
+        "options": "A. To reduce cold start latency for bursty traffic | B. To prevent GPU memory fragmentation | C. To maintain warm instances for consistent performance | D. To comply with data residency requirements",
+        "answers": "C",
+        "explanation": "Disabling scale-to-zero keeps at least one GPU instance warm, avoiding cold starts but increasing baseline cost."
+      },
+      {
+        "question": "What is the effect of setting 'spark.sql.adaptive.enabled=true' when performing feature engineering on skewed data?",
+        "options": "A. Dynamically optimizes task sizes based on data distribution | B. Forces even partition sizes regardless of skew | C. Disables Catalyst optimizer for custom transformations | D. Enables GPU acceleration for Spark SQL operations",
+        "answers": "A",
+        "explanation": "Adaptive query execution helps handle data skew by dynamically adjusting partition sizes during operations like joins or aggregations."
+      },
+      {
+        "question": "When using MLflow's evaluation API with custom metrics, what is the purpose of the 'eval_metrics' parameter?",
+        "options": "A. To override default metric calculations | B. To specify additional metrics beyond built-in ones | C. To disable all metric logging | D. To validate metric computation time",
+        "answers": "B",
+        "explanation": "'eval_metrics' accepts a dictionary of custom metric functions to complement or replace default metrics during model evaluation."
+      },
+      {
+        "question": "What is the risk of setting 'max_payload_size' too high in a Databricks Model Serving endpoint?",
+        "options": "A. Increased memory pressure on workers | B. Slower autoscaling response times | C. Disabled schema validation | D. Broken feature store integrations",
+        "answers": "A",
+        "explanation": "Large payloads consume more worker memory, potentially causing OOM errors or reduced throughput."
+      },
+      {
+        "question": "When using Delta Lake's CHANGE DATA FEED with Feature Store, what is the primary benefit for ML pipelines?",
+        "options": "A. Enables incremental feature updates without full recomputation | B. Automatically encrypts changed features | C. Forces Z-ordering on all feature tables | D. Disables versioning for better performance",
+        "answers": "A",
+        "explanation": "Change Data Feed tracks row-level changes, allowing efficient incremental updates to feature tables."
+      },
+      {
+        "question": "What is the purpose of the 'archive_run()' method in MLflow when managing long-running experiments?",
+        "options": "A. To compress run artifacts for storage efficiency | B. To mark runs as inactive without deleting them | C. To automatically transition associated models to Archived stage | D. To disable metric logging for old runs",
+        "answers": "B",
+        "explanation": "Archiving runs helps declutter the MLflow UI while preserving run metadata and artifacts."
+      },
+      {
+        "question": "When implementing a custom MLflow model flavor, why would you override the 'load_context()' method?",
+        "options": "A. To initialize expensive resources once per worker | B. To skip dependency validation | C. To enable automatic model pruning | D. To force single-threaded execution",
+        "answers": "A",
+        "explanation": "load_context() is called once during model initialization, ideal for setting up shared resources like GPU contexts or database connections."
+      },
+      {
+        "question": "What is the effect of setting 'spark.databricks.featureStore.enableOnlineStore=true' without configuring online store credentials?",
+        "options": "A. The system falls back to offline store only | B. Online feature lookups automatically use IAM roles | C. All feature store writes fail | D. The setting is ignored with a warning",
+        "answers": "A",
+        "explanation": "Without online store configuration, feature lookups default to the offline store without failing."
+      },
+      {
+        "question": "When using Feature Store's 'write_table' API, what does 'mode=merge' provide over 'mode=overwrite'?",
+        "options": "A. Upserts features based on primary keys | B. Appends features without deduplication | C. Compresses feature data more efficiently | D. Enables time travel for the operation",
+        "answers": "A",
+        "explanation": "Merge mode performs upsert operations, updating existing features and inserting new ones based on primary keys."
+      },
+      {
+        "question": "What is the purpose of the 'spark.databricks.mlflow.tracking.uri' configuration in a shared access mode cluster?",
+        "options": "A. Overrides the per-user MLflow tracking URI | B. Enables cross-workspace experiment sharing | C. Forces all users to log to the same experiment | D. Disables MLflow tracking for non-admin users",
+        "answers": "A",
+        "explanation": "This setting makes all users on the cluster log to a unified tracking server instead of their personal workspaces."
+      },
+      {
+        "question": "When monitoring feature drift with Lakehouse Monitoring, why would you set 'baseline_type=rolling'?",
+        "options": "A. To compare against a moving window of past data | B. To disable statistical tests | C. To force comparison against the training set | D. To reduce memory usage",
+        "answers": "A",
+        "explanation": "A rolling baseline adapts to expected seasonal patterns by comparing against recent data rather than the original training set."
+      },
+      {
+        "question": "What is the risk of calling 'mlflow.end_run()' inside a Spark UDF used for inference?",
+        "options": "A. Corrupts MLflow tracking state | B. Improves UDF performance | C. Enables automatic artifact logging | D. Has no effect",
+        "answers": "A",
+        "explanation": "UDFs execute across workers; improperly managed runs can corrupt tracking state or create orphaned runs."
+      },
+      {
+        "question": "When using MLflow Recipes, what is the purpose of the 'ingest' step profile output?",
+        "options": "A. Documents data quality expectations | B. Automatically fixes schema mismatches | C. Disables statistical checks | D. Overrides feature store settings",
+        "answers": "A",
+        "explanation": "The profile captures dataset characteristics and validation rules that inform downstream steps."
+      },
+      {
+        "question": "What happens if you register a model in MLflow Registry with 'tags={'db_model':true}'?",
+        "options": "A. Enables Databricks-specific optimizations | B. Triggers automatic model documentation | C. Has no built-in effect unless used in custom logic | D. Forces GPU-only inference",
+        "answers": "C",
+        "explanation": "Tags are metadata without implicit behavior unless processed by custom scripts or workflows."
+      },
+      {
+        "question": "When configuring a feature store online store with 'online_store_credential=azure_service_principal', what additional parameter is required?",
+        "options": "A. azure_client_secret | B. aws_access_key | C. gcp_service_account | D. databricks_pat",
+        "answers": "A",
+        "explanation": "Azure SP authentication requires client_secret along with client_id and tenant_id."
+      },
+      {
+        "question": "What is the effect of 'spark.sql.sources.bucketing.enabled=false' on feature store performance?",
+        "options": "A. Disables optimization for frequently joined features | B. Improves small file handling | C. Enables Z-ordering by default | D. Forces repartitioning on all writes",
+        "answers": "A",
+        "explanation": "Bucketing accelerates joins for features commonly joined on the same columns; disabling it may hurt performance."
+      }
+    ]
+}
